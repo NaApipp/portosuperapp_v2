@@ -55,7 +55,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <section className="bg-black text-white" id="contact">
+    <section className="bg-black text-white scroll-mt-20" id="contact">
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-8 md:grid-cols-2">
           {/* LEFT */}
