@@ -13,30 +13,30 @@ type Item = {
 };
 
 const items: Item[] = [
-  {
+    {
     title: "Coffee Shop",
-    desc: "This is my portfolio website using Next.js and React.",
+    desc: "Website with menu viewing and ordering features with responsive design.",
     image: "/asset/image/project-image/coffee_shop.png",
   },
   {
     title: "GreenCode",
-    desc: "This is my portfolio website using Next.js and React.",
+    desc: "App for managing B3 waste, with a responsive and attractive design.",
     image: "/asset/image/project-image/Cover-GreenCode.png",
   },
   {
     title: "Rent Car Design",
-    desc: "This is my portfolio website using Next.js and React.",
+    desc: "Responsive and intuitive vehicle rental design.",
     image: "/asset/image/project-image/rent-car-design.png",
   },
   {
     title: "School Profile",
-    desc: "This is my portfolio website using Next.js and React.",
+    desc: "Profile of SMK Negeri 4 Kendal, created with WordPress for time efficiency.",
     image: "/asset/image/project-image/school-profile.png",
   },
   {
     title: "Class Profile Site",
-    desc: "This is my portfolio website using Next.js and React.",
-    image: "/asset/image/project-image/coffee_shop.png",
+    desc: "Responsive, intuitive, and attractive design for efficient vehicle rental on any device.",
+    image: "/asset/image/project-image/rpl-site-cover.png",
   },
 ];
 export default function SeeProject() {
@@ -75,9 +75,9 @@ export default function SeeProject() {
 
 function Card({ item }: { item: Item }) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/40 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
+    <div className="group relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/40 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] h-max">
       {/* Image */}
-      <div className="relative h-[210px] w-full">
+      <div className="relative h-[200px] w-full">
         <Image
           src={item.image}
           alt={item.title}
@@ -101,8 +101,8 @@ function Card({ item }: { item: Item }) {
           {item.desc}
         </p>
 
-        <button className="mt-4 inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white opacity-0 translate-y-2 transition duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-blue-500">
-          <a href="/project">Go To Project</a>
+        <button className="mt-4  inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white opacity-0 translate-y-2 transition duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-blue-500">
+          <a href="/project">See In Project</a>
         </button>
       </div>
 
