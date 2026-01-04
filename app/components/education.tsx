@@ -28,7 +28,7 @@ function DashItem({ children }: { children: React.ReactNode }) {
 
 export default function Education() {
   return (
-    <section className="bg-black">
+    <section className="bg-black scroll-mt-20" id="education">
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-10 md:grid-cols-12">
           {/* Left label */}

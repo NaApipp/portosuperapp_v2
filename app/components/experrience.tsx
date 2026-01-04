@@ -45,7 +45,7 @@ function DashItem({ children }: { children: React.ReactNode }) {
 
 export default function Experience() {
   return (
-    <section className="bg-black" id="experience">
+    <section className="bg-black scroll-mt-20" id="experience">
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-10 md:grid-cols-12">
           {/* Left label */}

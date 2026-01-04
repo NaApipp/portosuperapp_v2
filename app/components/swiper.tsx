@@ -43,7 +43,7 @@ export default function SeeProject() {
   const swiperRef = useRef<SwiperType | null>(null);
   return (
     <>
-      <h1 className="text-center text-5xl font-bebas m-5">FEATURE PRORJECT</h1>
+      <h1 className="text-center text-5xl font-bebas m-5 scroll-mt-30" id="project">FEATURE PRORJECT</h1>
       <div
         className="w-full"
         onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
