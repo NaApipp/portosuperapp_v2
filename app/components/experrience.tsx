@@ -45,7 +45,7 @@ function DashItem({ children }: { children: React.ReactNode }) {
 
 export default function Experience() {
   return (
-    <section className="bg-black scroll-mt-20" id="experience">
+    <section className="bg-[#08152F] scroll-mt-20 font-poppins font-semibold" id="experience">
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-10 md:grid-cols-12">
           {/* Left label */}
@@ -65,11 +65,11 @@ export default function Experience() {
                     <h3 className="text-lg font-semibold text-zinc-100">
                       {exp.company}
                     </h3>
-                    <p className="text-sm text-zinc-400">{exp.dateRange}</p>
+                    <p className="text-sm text-zinc-400 font-medium">{exp.dateRange}</p>
                   </div>
 
                   {/* Location */}
-                  <p className="text-sm font-medium text-sky-400">
+                  <p className="text-sm text-sky-400">
                     {exp.location}
                   </p>
 
