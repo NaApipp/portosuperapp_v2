@@ -34,7 +34,7 @@ const items: Item[] = [
     image: "/asset/image/project-image/school-profile.png",
   },
   {
-    title: "Class Profile Site",
+    title: "MASTERJAVA PROJECT",
     desc: "Responsive, intuitive, and attractive design for efficient vehicle rental on any device.",
     image: "/asset/image/project-image/rpl-site-cover.png",
   },
