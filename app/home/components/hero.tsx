@@ -29,7 +29,7 @@ export default function Hero() {
         <div className="flex items-center justify-center w-1/2">
         {/* Personal Image */}
           <img
-            src="asset\image\personal\personal_phot.jpg"
+            src="asset\image\personal\personal_photo.jpg"
             alt="Image Profile"
             className="w-auto h-[500px] rounded"
           />
