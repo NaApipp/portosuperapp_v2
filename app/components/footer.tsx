@@ -55,7 +55,9 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <section className="bg-black text-white scroll-mt-20" id="contact">
+    <section className="bg-[#08152F] text-white scroll-mt-20" id="contact">
+
+      {/* Form + Socmed */}
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-8 md:grid-cols-2">
           {/* LEFT */}
@@ -283,32 +285,32 @@ export default function Footer() {
       <div className="w-full h-px bg-[#D5DEEF] mt-[10px] mb-3"></div>
 
       {/* Copyright */}
-      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between font-poppins font-semibold">
         <span className="text-sm text-body sm:text-center">
           &copy; <span>{year}</span>{" "}
-          <a href="https://flowbite.com/" className="hover:underline">
+          <a href="https://www.instagram.com/n_apipppp/" className="hover:underline">
             SuperApps
           </a>
           . All Rights Reserved.
         </span>
-        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-body sm:mt-0">
+        <ul className="flex flex-wrap items-center mt-3 text-sm text-body sm:mt-0">
           <li>
-            <a href="#" className="hover:underline me-4 md:me-6">
+            <a href="#footer" className="hover:underline me-4 md:me-6">
               Home
             </a>
           </li>
           <li>
-            <a href="#" className="hover:underline me-4 md:me-6">
+            <a href="#education" className="hover:underline me-4 md:me-6">
               Education
             </a>
           </li>
           <li>
-            <a href="#" className="hover:underline me-4 md:me-6">
+            <a href="#experience" className="hover:underline me-4 md:me-6">
               Experience
             </a>
           </li>
           <li>
-            <a href="#" className="hover:underline">
+            <a href="/project" className="hover:underline">
               Project
             </a>
           </li>
