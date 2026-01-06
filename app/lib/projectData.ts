@@ -13,7 +13,7 @@ export const projectData: ProjectData[] = [
     image: "/asset/image/project-image/Cover-GreenCode.png",
     project_name: "GreenCode Web",
     project_desc:
-      "I developed the 'GreenCode' web application. This app has comprehensive features for managing B3 waste. Its design is responsive and attractive, making it comfortable to use on various devices.",
+      "A web application for managing B3 (hazardous and toxic) waste, designed with a responsive and attractive user interface. This platform helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
     links: [
       {
         label: "Github",
@@ -29,7 +29,7 @@ export const projectData: ProjectData[] = [
     image: "/asset/image/project-image/rent-car-design.png",
     project_name: "UI Design Rent Car",
     project_desc:
-      "Saya mendesign sebuah aplikasi untuk Rental Mobil. Design ini membantu untuk menyewa kendaraan lebih efisien dan juga praktis. Desainnya responsif, intuitif, dan menarik, sehingga mudah digunakan di berbagai perangkat.",
+      "I designed an application for Car Rental. This design helps to rent vehicles more efficiently and practically. The design is responsive, intuitive, and attractive, making it easy to use on various devices.",
     links: [
       {
         label: "Figma",
@@ -41,10 +41,10 @@ export const projectData: ProjectData[] = [
   // Project Coffee Shop Web Template
   {
     id: "3",
-    image: "/asset/image/project-image/rent-car-design.png",
+    image: "/asset/image/project-image/coffee_shop.png",
     project_name: "CoffeeShop Web Template",
     project_desc:
-      "Saya menyediakan template aplikasi web untuk Coffee Shop. Web ini memiliki fitur yang untuk melihat Menu dan juga memmesannya. Desainnya responsif dan menarik, sehingga nyaman digunakan di berbagai perangkat.",
+      "I provide a web application template for Coffee Shops. This website features menu viewing and ordering capabilities. The design is responsive and attractive, making it comfortable to use on various devices.",
     links: [
       {
         label: "Github",
@@ -63,7 +63,7 @@ export const projectData: ProjectData[] = [
     image: "/asset/image/project-image/school-profile.png",
     project_name: "School Profile",
     project_desc:
-      "Project website ini merupakan duplikast dari project 'Re-Design official website' dari sekolah Saya sendiri yaitu SMK Negeri 4 Kendal. Namun bedanya pada project ini saya menggunakan teknologi wordpress untuk efisiensi waktu.",
+      "This project website is a duplicate of the 'Re-Design official website' project from my own school, SMK Negeri 4 Kendal. The difference is that in this project I used WordPress technology for time efficiency.",
     links: [
       {
         label: "Demo",
@@ -76,9 +76,9 @@ export const projectData: ProjectData[] = [
   {
     id: "5",
     image: "/asset/image/project-image/rpl-site-cover.png",
-    project_name: "MasterJava Project",
+    project_name: "MASTERJAVA Project",
     project_desc:
-      "Project website ini merupakan duplikast dari project 'Re-Design official website' dari sekolah Saya sendiri yaitu SMK Negeri 4 Kendal. Namun bedanya pada project ini saya menggunakan teknologi wordpress untuk efisiensi waktu.",
+      "This project website is a duplicate of the 'Re-Design official website' project from my own school, SMK Negeri 4 Kendal. The difference is that in this project I used WordPress technology for time efficiency.",
     links: [
       {
         label: "Demo",
