@@ -1,19 +1,19 @@
 export default function Navbar() {
   return (
     <>
-      <nav className="fixed inset-x-0 top-0 z-50 h-16 bg-blue-950 border-b border-default">
+      <nav className="fixed inset-x-0 top-0 z-50 h-16 bg-[#102D41]">
         <div className="max-w-screen-xl mx-auto flex h-full flex-wrap items-center justify-between px-4">
           <a
-            href="https://flowbite.com/"
+            href="/project"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="h-7"
+              src="\asset\image\logo\logo_apip_white.png"
+              className="h-11"
               alt="Flowbite Logo"
             />
-            <span className="self-center text-xl text-heading font-semibold whitespace-nowrap">
-              Nabil Apipp
+            <span className="self-center text-xl text-heading font-poppins font-semibold whitespace-nowrap">
+              NABIL APIPP
             </span>
           </a>
           <button
@@ -42,16 +42,7 @@ export default function Navbar() {
             </svg>
           </button>
           <div className="hidden w-full md:block md:w-auto" id="navbar-solid">
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-secondary-soft">
-              <li>
-                <a
-                  href="#home"
-                  className="block py-2 px-3 text-white bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0"
-                  aria-current="page"
-                >
-                  Home
-                </a>
-              </li>
+            <ul className="font-semibold font-poppins flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-secondary-soft">
               <li>
                 <a
                   href="#education"
@@ -70,10 +61,10 @@ export default function Navbar() {
               </li>
               <li>
                 <a
-                  href="#project"
+                  href="/project"
                   className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
                 >
-                  Feature Project
+                  Project
                 </a>
               </li>
               <li>
