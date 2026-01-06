@@ -42,8 +42,8 @@ const items: Item[] = [
 export default function SeeProject() {
   const swiperRef = useRef<SwiperType | null>(null);
   return (
-    <>
-      <h1 className="text-center text-5xl font-bebas m-5 scroll-mt-30" id="project">FEATURE PRORJECT</h1>
+    <div className="bg-[#08152F]">
+      <h1 className="text-center text-5xl font-bebas scroll-mt-30 mb-10" id="project">FEATURE PRORJECT</h1>
       <div
         className="w-full"
         onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
@@ -69,7 +69,7 @@ export default function SeeProject() {
           ))}
         </Swiper>
       </div>
-    </>
+    </div>
   );
 }
 
