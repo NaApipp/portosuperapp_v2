@@ -7,8 +7,8 @@ export default function Footer() {
       <div className="w-full h-px bg-[#D5DEEF]"></div>
 
       {/* Copyright */}
-      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between font-poppins font-semibold bg-[#08152F]">
-        <span className="text-sm text-body sm:text-center">
+      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:flex-row md:items-center md:justify-between flex flex-col justify-center items-center font-poppins font-semibold">
+        <span className="text-sm text-center md:text-center">
           &copy; <span>{year}</span>{" "}
           <a
             href="https://www.instagram.com/n_apipppp/"
