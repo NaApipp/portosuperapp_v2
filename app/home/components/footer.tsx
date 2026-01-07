@@ -333,8 +333,8 @@ export default function Footer() {
       <div className="w-full h-px bg-[#D5DEEF] mt-[10px] mb-3"></div>
 
       {/* Copyright */}
-      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between font-poppins font-semibold">
-        <span className="text-sm text-body sm:text-center">
+      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:flex-row md:items-center md:justify-between flex flex-col justify-center items-center font-poppins font-semibold">
+        <span className="text-sm text-center md:text-center">
           &copy; <span>{year}</span>{" "}
           <a
             href="https://www.instagram.com/n_apipppp/"
@@ -344,7 +344,7 @@ export default function Footer() {
           </a>
           . All Rights Reserved.
         </span>
-        <ul className="flex flex-wrap items-center mt-3 text-sm text-body sm:mt-0">
+        <ul className="flex flex-wrap items-center justify-center mt-3 text-sm text-body sm:mt-0">
           <li>
             <a href="#footer" className="hover:underline me-4 md:me-6">
               Home
