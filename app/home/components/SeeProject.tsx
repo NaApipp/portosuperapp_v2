@@ -42,7 +42,7 @@ const items: Item[] = [
 export default function SeeProject() {
   const swiperRef = useRef<SwiperType | null>(null);
   return (
-    <div className="bg-[#08152F]">
+    <div className="bg-[#08152F]" id="see_project">
       <h1 className="text-center text-5xl font-bebas scroll-mt-30 mb-10" id="project">FEATURE PRORJECT</h1>
       <div
         className="w-full"

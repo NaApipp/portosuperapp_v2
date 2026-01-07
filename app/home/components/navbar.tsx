@@ -36,7 +36,7 @@ export default function Navbar() {
               <path
                 stroke="currentColor"
                 strokeLinecap="round"
-                stroke-width="2"
+                strokeWidth="2"
                 d="M5 7h14M5 12h14M5 17h14"
               />
             </svg>

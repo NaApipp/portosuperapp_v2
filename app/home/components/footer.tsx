@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useContact } from "@/app/hooks/useContact";
 
 const inputBase =
   "w-full rounded-2xl border border-zinc-800 bg-zinc-950/60 px-4 py-3 text-sm text-zinc-100 " +
@@ -54,9 +55,21 @@ export default function Footer() {
   // Year Function (biar selalu update)
   const year = new Date().getFullYear();
 
+  const {
+    email,
+    setEmail,
+    name,
+    setName,
+    message,
+    setMessage,
+    status,
+    statusType,
+    isSubmitting,
+    handleSubmit,
+  } = useContact();
+
   return (
     <section className="bg-[#08152F] text-white scroll-mt-20" id="contact">
-
       {/* Form + Socmed */}
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-8 md:grid-cols-2">
@@ -184,7 +197,12 @@ export default function Footer() {
                   <h4 className="text-base font-semibold">Prefer email?</h4>
                   <p className="mt-1 text-sm text-zinc-400">
                     Use the form or reach out at{" "}
-                    <a href="mailto:nabilariftriyanto@gmail.com" className="text-zinc-200">nabilariftriyanto@email.com</a>
+                    <a
+                      href="mailto:nabilariftriyanto@gmail.com"
+                      className="text-zinc-200"
+                    >
+                      nabilariftriyanto@email.com
+                    </a>
                   </p>
                 </div>
               </div>
@@ -222,42 +240,72 @@ export default function Footer() {
                 </div>
               </div>
 
-              <form className="mt-6 space-y-5">
+              {/* Main Form */}
+              <form className="mt-6 space-y-5" onSubmit={handleSubmit}>
                 {/* Email + Name */}
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-zinc-200">
-                      Email
+                    <label
+                      className="text-sm font-semibold text-zinc-200"
+                      htmlFor="email"
+                    >
+                      Email:{" "}
                     </label>
-                    <input className={inputBase} placeholder="your@email.com" />
+                    <input
+                      type="text"
+                      name="email"
+                      id="email"
+                      className={inputBase}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="your@email.com"
+                    />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-zinc-200">
-                      Name
+                    <label
+                      className="text-sm font-semibold text-zinc-200"
+                      htmlFor="name"
+                    >
+                      Name:{" "}
                     </label>
-                    <input className={inputBase} placeholder="Your name" />
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      className={inputBase}
+                      placeholder="Your name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
                   </div>
                 </div>
 
                 {/* Message */}
                 <div className="space-y-2">
-                  <label className="text-sm font-semibold text-zinc-200">
-                    Message
+                  <label
+                    className="text-sm font-semibold text-zinc-200"
+                    htmlFor="message"
+                  >
+                    Message:{" "}
                   </label>
                   <textarea
+                    name="message"
+                    id="message"
                     rows={7}
                     className={inputBase + " resize-none leading-relaxed"}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     placeholder="Tell me about your project or just say hi..."
                   />
                 </div>
 
                 {/* Button */}
                 <button
-                  type="button"
-                  className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200"
+                  type="submit"
+                  className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200 cursor-pointer"
                 >
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                  {/* <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
                     <path
                       d="M22 2 11 13"
                       stroke="currentColor"
@@ -272,7 +320,7 @@ export default function Footer() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
-                  </svg>
+                  </svg> */}
                   Send Message
                 </button>
               </form>
@@ -280,7 +328,7 @@ export default function Footer() {
           </SectionCard>
         </div>
       </div>
-      
+
       {/* Line */}
       <div className="w-full h-px bg-[#D5DEEF] mt-[10px] mb-3"></div>
 
@@ -288,7 +336,10 @@ export default function Footer() {
       <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between font-poppins font-semibold">
         <span className="text-sm text-body sm:text-center">
           &copy; <span>{year}</span>{" "}
-          <a href="https://www.instagram.com/n_apipppp/" className="hover:underline">
+          <a
+            href="https://www.instagram.com/n_apipppp/"
+            className="hover:underline"
+          >
             SuperApps
           </a>
           . All Rights Reserved.
