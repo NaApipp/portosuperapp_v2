@@ -75,7 +75,7 @@ export default function SeeProject() {
 
 function Card({ item }: { item: Item }) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/40 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] h-max">
+    <div className="group relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/40 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] md:h-max h-[400px]">
       {/* Image */}
       <div className="relative h-[200px] w-full">
         <Image
@@ -97,11 +97,11 @@ function Card({ item }: { item: Item }) {
         <h3 className="text-base font-semibold text-zinc-100">{item.title}</h3>
 
         {/* Teks detail muncul saat hover */}
-        <p className="mt-2 text-sm leading-relaxed text-zinc-300 opacity-0 translate-y-2 transition duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+        <p className="mt-2 text-sm leading-relaxed text-zinc-300 opacity-100 md:opacity-0 translate-y-2 transition duration-300 md:group-hover:opacity-100 md:group-hover:translate-y-0">
           {item.desc}
         </p>
 
-        <button className="mt-4  inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white opacity-0 translate-y-2 transition duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:bg-blue-500">
+        <button className="mt-4  inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white md:opacity-0 translate-y-2 transition duration-300 group-hover:opacity-100 md:group-hover:translate-y-0 hover:bg-blue-500">
           <a href="/project">See In Project</a>
         </button>
       </div>
