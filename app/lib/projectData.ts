@@ -1,8 +1,11 @@
+export type ProjectType = "Website Development" | "UI/UX Design" | "Wordpress";
+
 export type ProjectData = {
   id?: string;
   image: string;
   project_name: string;
   project_desc: string;
+  project_type: ProjectType;
   links?: { label: string; href: string }[];
 };
 
@@ -10,6 +13,7 @@ export const projectData: ProjectData[] = [
   // Project GreenCode
   {
     id: "1",
+    project_type: "Website Development",
     image: "/asset/image/project-image/Cover-GreenCode.png",
     project_name: "GreenCode Web",
     project_desc:
@@ -26,6 +30,7 @@ export const projectData: ProjectData[] = [
   // Project Rent Car Design
   {
     id: "2",
+    project_type: "UI/UX Design",
     image: "/asset/image/project-image/rent-car-design.png",
     project_name: "UI Design Rent Car",
     project_desc:
@@ -41,6 +46,7 @@ export const projectData: ProjectData[] = [
   // Project Coffee Shop Web Template
   {
     id: "3",
+    project_type: "Website Development",
     image: "/asset/image/project-image/coffee_shop.png",
     project_name: "CoffeeShop Web Template",
     project_desc:
@@ -60,6 +66,7 @@ export const projectData: ProjectData[] = [
   // Project Scholl Profile
   {
     id: "4",
+    project_type: "Wordpress",
     image: "/asset/image/project-image/school-profile.png",
     project_name: "School Profile",
     project_desc:
@@ -75,6 +82,7 @@ export const projectData: ProjectData[] = [
   // Project Scholl Profile
   {
     id: "5",
+    project_type: "Website Development",
     image: "/asset/image/project-image/rpl-site-cover.png",
     project_name: "MASTERJAVA Project",
     project_desc:
@@ -87,3 +95,8 @@ export const projectData: ProjectData[] = [
     ],
   },
 ];
+
+export const filterProjectsByType = (type: ProjectType | "all") => {
+  if (type === "all") return projectData;
+  return projectData.filter((p) => p.project_type === type);
+};
