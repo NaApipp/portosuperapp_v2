@@ -43,6 +43,10 @@ body {
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Swiepr Animaton */
 .swiper-wrapper {
   transition-timing-function: linear !important;
