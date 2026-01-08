@@ -51,7 +51,7 @@ export default function Project() {
                   "px-4 py-2 rounded-full font-medium text-sm font-poppins border transition",
                   isActive
                     ? "bg-[#2383AD] text-white border-black cursor-not-allowed"
-                    : "bg-white text-black border-gray-300 cursor-pointer hover:border-black",
+                    : "bg-white text-black border-gray-300 cursor-pointer hover:border-[#2383AD]",
                 ].join(" ")}
               >
                 {f.label}

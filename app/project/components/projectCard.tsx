@@ -24,12 +24,16 @@ export default function projectCard({ project }: { project: ProjectData }) {
           <p className="mt-2 line-clamp-3 text-sm leading-relaxed">
             {project.project_desc}
           </p>
+          <p className="mt-2 mb-2 line-clamp-3 text-sm leading-relaxed font-bold">
+            Tech Stack: <span className="font-medium">{project.tech_stack}</span>
+          </p>
+
 
           {project.links?.length ? (
             <div className="mt-4 flex flex-wrap gap-2">
               {project.links.map((l) => {
                 const isExternal = /^https?:\/\//.test(l.href);
-
+                // Button Link
                 return isExternal ? (
                   <a
                     key={`${project.id}-${l.label}`}
