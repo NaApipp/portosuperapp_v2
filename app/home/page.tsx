@@ -17,7 +17,7 @@ export default function age() {
           content="Nabil Arif a.k.a Nabil Apipp Profile"
         />
 
-        <link rel="canonical" href={siteUrl} />
+        <link rel="canonical" href="" />
         <meta name="robots" content="index,follow" />
 
         <meta property="og:title" content="Project Showcase" />
@@ -25,7 +25,7 @@ export default function age() {
           property="og:description"
           content="Education Of Nabil Arif, Experience Nabil Arif, and Contact Nabil Arif"
         />
-        <meta property="og:url" content={siteUrl} />
+        <meta property="og:url" content="" />
         <meta property="og:type" content="website" />
 
         {/* opsional */}
