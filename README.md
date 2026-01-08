@@ -1,4 +1,4 @@
-<!-- SHORTCUT VIEW README MD [CTRL + SHIF + V] -->
+<!-- SHORTCUT VIEW README MD [CTRL + SHIF + V] gi -->
 
 ## ENV
 MONGODB_URI=mongodb+srv://apip_user:apip_password@cluster0.zpvcqzw.mongodb.net/?appName=Cluster0
