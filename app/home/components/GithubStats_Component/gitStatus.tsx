@@ -17,6 +17,7 @@ export default async function GitHubStats() {
       <h2 className="font-bebas text-center text-5xl font-semibold text-white">
         GitHub Statistics
       </h2>
+      {/* Github Grafik */}
 {/* 
       <p className="text-center text-sm text-white/60 mt-1">
         Contribution Activity
