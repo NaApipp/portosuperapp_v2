@@ -323,6 +323,18 @@ export default function Footer() {
                   </svg> */}
                   Send Message
                 </button>
+                {/* Alert Status */}
+                {status && (
+                  <p
+                    className={`mt-2 font-poppins font-semibold text-center  ${
+                      statusType === "success"
+                        ? "text-white"
+                        : "text-red-500"
+                    }`}
+                  >
+                    {status}
+                  </p>
+                )}
               </form>
             </div>
           </SectionCard>

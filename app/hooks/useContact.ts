@@ -78,7 +78,7 @@ export function useContact() {
       }
 
       setStatusType("success");
-      setStatus(`Pesan berhasil dikirim! Terima kasih, ${trimmedName}.`);
+      setStatus(`Hi ${trimmedName}, kita sekarang teman :).`);
       setEmail("");
       setName("");
       setMessage("");
