@@ -2,6 +2,7 @@ import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import Education from "./components/education";
 import Experience from "./components/experrience";
+import GithubStatus from "./components/GithubStats_Component/gitStatus";
 import SeeProject from "./components/SeeProject";
 import Footer from "./components/footer";
 import Head from "next/head";
@@ -49,6 +50,7 @@ export default function age() {
         <Hero/>
         <Education/>
         <Experience/>
+        <GithubStatus/>
         <SeeProject />
         </main>
         <Footer/>
