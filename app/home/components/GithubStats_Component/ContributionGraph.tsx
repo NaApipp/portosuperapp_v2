@@ -1,3 +1,5 @@
+"use client"
+
 type Day = {
   date: string;
   contributionCount: number;
@@ -23,11 +25,22 @@ function aggregateMonthly(weeks: Week[]): MonthlyContribution[] {
     });
   });
 
-  return Object.entries(map).map(([month, total]) => ({
-    month,
-    total,
-  }));
+  return Object.entries(map)
+    .map(([month, total]) => ({ month, total }))
+    .sort((a, b) => a.month.localeCompare(b.month)); // penting!
 }
+
+
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+
 
 export default function ContributionGraph({ weeks }: { weeks: Week[] }) {
   const monthlyData = aggregateMonthly(weeks);
@@ -35,53 +48,32 @@ export default function ContributionGraph({ weeks }: { weeks: Week[] }) {
 
   return (
     <div className="mt-4">
-      <div
-        className="grid items-center justify-center gap-[2px]"
-        style={{ gridTemplateColumns: "repeat(53, 11px)" }}
-      >
-        {weeks.map((week) =>
-          week.contributionDays.map((day) => (
-            <div
-              key={day.date}
-              title={`${day.contributionCount} contributions`}
-              className="rounded-[2px]"
-              style={{
-                width: 11,
-                height: 11,
-                backgroundColor: day.color,
-              }}
-            />
-          ))
-        )}
-      </div>
-
-      <div className="flex justify-center items-center text-[11px] text-white/50 mt-2">
-        <span>Less </span>
-        <span> | | </span>
-        <span> More</span>
-      </div>
-      <div className="mt-4 space-y-2">
-        <p className="text-[11px] text-white/60 text-center">
-          Monthly contributions (aggregated)
+      
+      {/* Per Month */}
+      <div className="mt-6">
+        <p className="text-[11px] text-white/60 text-center mb-2">
+          Monthly contributions Github
         </p>
 
-        {monthlyData.map((item) => (
-          <div key={item.month}>
-            <div className="flex justify-between text-[11px] text-white/70">
-              <span>{item.month}</span>
-              <span>{item.total}</span>
-            </div>
-
-            <div className="h-[6px] bg-white/10 rounded mt-[2px]">
-              <div
-                className="h-full rounded bg-green-500"
-                style={{
-                  width: `${(item.total / maxMonthly) * 100}%`,
-                }}
+        <div className="w-full h-[220px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={monthlyData}>
+              <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
+              <XAxis dataKey="month" tick={{ fontSize: 11, fill: "rgba(255,255,255,0.6)" }} />
+              <YAxis tick={{ fontSize: 11, fill: "rgba(255,255,255,0.6)" }} />
+              <Tooltip
+                contentStyle={{ background: "#111", border: "1px solid rgba(255,255,255,0.15)" }}
+                labelStyle={{ color: "rgba(255,255,255,0.8)" }}
               />
-            </div>
-          </div>
-        ))}
+              <Line
+                type="monotone"
+                dataKey="total"
+                strokeWidth={2}
+                dot={false}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     </div>
   );
