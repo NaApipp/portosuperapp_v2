@@ -14,16 +14,12 @@ export default async function GitHubStats() {
 
   return (
     <section className="mt-20 pl-10 pr-10">
-      <h2 className="font-bebas text-center text-5xl font-semibold text-white">
+      <h1 className="font-bebas text-center text-5xl font-semibold text-white">
         GitHub Statistics
-      </h2>
-      {/* Github Grafik */}
-{/* 
-      <p className="text-center text-sm text-white/60 mt-1">
-        Contribution Activity
-      </p>
+      </h1>
 
-      <ContributionGraph weeks={contributions.weeks} /> */}
+
+      <ContributionGraph weeks={contributions.weeks} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-4 mt-6 mb-20">
         <StatCard
