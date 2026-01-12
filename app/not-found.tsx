@@ -19,7 +19,7 @@ export default function NotFound() {
               <span className="font-bold text-white text-xl relative z-10 duration-500">
                 Go To Home
               </span>
-              <span className="absolute top-0 left-0 w-full bg-[#102D41] duration-500 group-hover:-translate-x-full h-full" />
+              <span className="absolute top-0 left-0 w-full bg-[#102D41] duration-500 gr  oup-hover:-translate-x-full h-full" />
               <span className="absolute top-0 left-0 w-full bg-[#102D41] duration-500 group-hover:translate-x-full h-full" />
               <span className="absolute top-0 left-0 w-full bg-[#102D41] duration-500 delay-300 group-hover:-translate-y-full h-full" />
               <span className="absolute delay-300 top-0 left-0 w-full bg-[#102D41] duration-500 group-hover:translate-y-full h-full" />
