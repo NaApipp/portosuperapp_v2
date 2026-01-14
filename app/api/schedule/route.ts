@@ -40,3 +40,35 @@ export async function POST(request: Request) {
     );
   }
 }
+
+
+export async function GET() {
+  try {
+    const client = await clientPromise;
+    const db = client.db("porto-apip");
+    const collection = db.collection("schedules");
+
+    const schedules = await collection
+      .find({})
+      .sort({ date: 1, jam: 1 }) // opsional, tapi logis
+      .toArray();
+
+    return NextResponse.json(
+      {
+        success: true,
+        data: schedules,
+      },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("GET /schedules:", error);
+
+    return NextResponse.json(
+      {
+        errorCode: "SERVER_ERROR",
+        message: "Terjadi kesalahan pada server",
+      },
+      { status: 500 }
+    );
+  }
+}
