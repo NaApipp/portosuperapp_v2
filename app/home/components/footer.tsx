@@ -303,7 +303,7 @@ export default function Footer() {
                 {/* Button */}
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200 cursor-pointer"
+                  className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
                 >
                   {/* <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
                     <path
