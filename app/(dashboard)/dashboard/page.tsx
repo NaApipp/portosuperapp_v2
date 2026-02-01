@@ -11,19 +11,20 @@ export default function DashboardPage() {
 
   if (isLoading) return <div style={{ padding: 24 }}>Loading...</div>;
 
+
+
+
   return (
     <>
-      <div className="">
+      <div className="bg-gradient-to-br from-[#0F2854] to-[#1C4D8D]">
         <Navbar />
-        <div className="pt-20 px-4 max-w-screen-xl mx-auto">
-          <h1 className="text-2xl font-semibold mb-4">Dashboard</h1>
+        <div className="pt-20 px-4 max-w-screen-xl mx-auto text-center">
+          <h1 className="text-2xl font-semibold mb-4">SuperApps Dashboard</h1>
           <p className="mb-4">
-            Halo Boss, <b>{user?.username}</b>
+            Welcome Back Boss, <b>{user?.username}</b>
           </p>
         </div>
 
-        <hr style={{ margin: "20px 0" }} className="pl-3" />
-        {/* Schedule Section */}
         
         <hr style={{ margin: "20px 0" }} className="pl-3" />
         {/* Message Section */}
