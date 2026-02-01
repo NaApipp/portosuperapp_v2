@@ -2,8 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useAuth } from "../authProvider";
 
 export default function Navbar() {
+  const { logout } = useAuth();
+  
+  
   const [open, setOpen] = useState(false);
 
   const close = () => setOpen(false);
@@ -66,7 +70,7 @@ export default function Navbar() {
             md:flex-row md:items-center md:space-x-8 rtl:space-x-reverse
             md:p-0 md:border-0 md:bg-transparent
           ">
-            <li>
+            {/* <li>
               <Link
                 href="/dashboard"
                 onClick={close}
@@ -74,23 +78,14 @@ export default function Navbar() {
               >
                 Home
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
-                href="/buat_schedule"
-                onClick={close}
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                href="/login"
+                onClick={logout}
+                className="block py-2 px-3 text-heading rounded bg-[#C3110C] p-4 hover:bg-[#C3110C]/80 hover:text-white/80"
               >
-                Buat Schedule
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/finance-track"
-                onClick={close}
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
-              >
-                Finance Track
+                Logout
               </Link>
             </li>
           </ul>
