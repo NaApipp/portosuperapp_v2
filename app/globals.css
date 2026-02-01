@@ -8,7 +8,6 @@
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";
 
-
 @import "tailwindcss";
 
 :root {
@@ -21,7 +20,27 @@
   --font-lolita: "Lilita One", sans-serif;
   --font-bebas: "Bebas Neue", sans-serif;
   --font-game: "Silkscreen", sans-serif;
+}
 
+@layer components {
+  /* Dashboard  */
+  .container-message{
+    @apply flex flex-row flex-wrap justify-center gap-3;
+  }
+  .data-message {
+    @apply font-medium;
+  }
+  .card__content {
+    @apply flex flex-col gap-2;
+  }
+
+  /* Login */
+  .btn-back {
+    @apply flex justify-center items-center gap-3 text-white bg-amber-400 rounded hover:bg-amber-500 focus:ring-4 focus:ring-amber-300 shadow-xs font-medium leading-5 rounded text-sm px-4 py-2.5 focus:outline-none cursor-pointer;
+  }
+  .btn-login {
+    @apply text-white bg-amber-400 rounded hover:bg-amber-500 focus:ring-4 focus:ring-amber-300 shadow-xs font-black leading-5 rounded text-sm px-4 py-2.5 focus:outline-none cursor-pointer
+  }
 }
 
 @theme inline {
