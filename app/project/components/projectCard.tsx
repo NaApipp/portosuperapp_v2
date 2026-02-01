@@ -7,7 +7,7 @@ export default function projectCard({ project }: { project: ProjectData }) {
 
   return (
     <>
-      <article className="overflow-hidden rounded-2xl border border-neutral-200 text-white bg-[#2383AD]/40 shadow-sm transition hover:shadow-md">
+      <article className="overflow-hidden rounded-2xl border border-neutral-200 text-white bg-[#2383AD]/40 shadow-sm transition hover:shadow-md transition-transform duration-500 ease-out hover:scale-105">
         <div className="relative aspect-[16/9] w-full bg-neutral-100">
           <Image
             src={project.image}
