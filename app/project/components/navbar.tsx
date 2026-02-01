@@ -70,7 +70,7 @@ export default function Navbar() {
               <Link
                 href="/home"
                 onClick={close}
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                className="animasi-navbar block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
               >
                 Home
               </Link>
@@ -79,7 +79,7 @@ export default function Navbar() {
               <Link
                 href="/home#education"
                 onClick={close}
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                className="animasi-navbar block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
               >
                 Education
               </Link>
@@ -88,7 +88,7 @@ export default function Navbar() {
               <Link
                 href="/home#experience"
                 onClick={close}
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                className="animasi-navbar block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
               >
                 Experience
               </Link>
@@ -97,7 +97,7 @@ export default function Navbar() {
               <Link
                 href="/home#contact"
                 onClick={close}
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                className="animasi-navbar block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
               >
                 Contact
               </Link>
