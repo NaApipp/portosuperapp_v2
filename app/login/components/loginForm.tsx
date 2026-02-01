@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Link from "next/link";
 import { authStorageKeys } from "@/app/(dashboard)/authProvider";
 
 export default function LoginForm() {
@@ -33,7 +34,7 @@ export default function LoginForm() {
       sessionStorage.setItem(authStorageKeys.TOKEN_KEY, data.token);
       sessionStorage.setItem(
         authStorageKeys.LAST_ACTIVITY_KEY,
-        String(Date.now())
+        String(Date.now()),
       );
 
       router.replace("/dashboard");
@@ -44,13 +45,13 @@ export default function LoginForm() {
 
   return (
     <>
-      <div className="bg-[#08152F] min-h-screen">
+      <div className="bg-[#08152F] min-h-screen flex items-center justify-center">
         {/* Container Screen */}
-        <div className="flex justify-center">
+        <div className="">
           {/* Container 1 */}
           <div className="bg-[#102D41] m-5 rounded-2xl p-10" id="form">
             <h2 className="text-2xl font-bold mb-6 text-center text-white">
-              Login
+              Login Dashboard <br /> SuperApps
             </h2>
             <form action="" className="flex flex-col gap-8" onSubmit={onSubmit}>
               <div className="flex flex-col gap-2" id="username">
@@ -81,14 +82,31 @@ export default function LoginForm() {
                   required
                 />
               </div>
-              <button
-                type="submit"
-                disabled={loading}
-                className="text-white bg-amber-400 rounded hover:bg-amber-500 focus:ring-4 focus:ring-amber-300 shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none cursor-pointer"
-              >
+              <button type="submit" disabled={loading} className="btn-login">
                 {loading ? "Loading..." : "Login"}
               </button>
             </form>
+          </div>
+
+          <div id="go-home" className="flex items-center justify-center">
+            <Link href={"/home"} className="btn-back">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-house-icon lucide-house w-8 h-8"
+              >
+                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              </svg>
+              <span className="text-[20px] font-medium">Beranda</span>
+            </Link>
           </div>
         </div>
       </div>
