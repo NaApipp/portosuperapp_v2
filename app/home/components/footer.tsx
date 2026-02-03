@@ -325,16 +325,53 @@ export default function Footer() {
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
                 {/* Alert Status */}
-                {status && (
-                  <p
-                    className={`mt-2 font-poppins font-semibold text-center  ${
-                      statusType === "success"
-                        ? "text-white"
-                        : "text-red-500"
-                    }`}
-                  >
-                    {status}
-                  </p>
+
+                {/* Alert SUcces */}
+                {status && statusType === "success" && (
+                  <div className="p-4 rounded-lg bg-green-50 border border-green-200 dark:bg-green-900/30 dark:border-green-800">
+                    <div className="flex items-center gap-3">
+                      <svg
+                        className="w-5 h-5 text-green-600 dark:text-green-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <p className="text-green-800 dark:text-green-200 font-medium">
+                        {status}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Eror Alert */}
+                {status && statusType === "error" && (
+                  <div className="p-4 rounded-lg bg-red-50 border border-red-200 dark:bg-red-900/30 dark:border-red-800">
+                    <div className="flex items-center gap-3">
+                      <svg
+                        className="w-5 h-5 text-red-600 dark:text-red-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                      <p className="text-red-800 dark:text-red-200 font-medium">
+                        {status}
+                      </p>
+                    </div>
+                  </div>
                 )}
               </form>
             </div>

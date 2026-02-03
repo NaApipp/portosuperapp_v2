@@ -34,14 +34,14 @@ export function useContact() {
       // Validation Tidak Boleh Kosong
       if (!trimmedName || !trimmedMessage || !trimmedEmail) {
         setStatusType("error");
-        setStatus("Maaf, Email, Nama dan message tidak boleh kosong.");
+        setStatus("Sorry, Email, Name and message cannot be empty.");
         return;
       }
 
       // Validation Nama Minimal 3 Karakter
       if (trimmedName.length < 3) {
         setStatusType("error");
-        setStatus("Maaf, Nama minimal 3 karakter.");
+        setStatus("Sorry, Name must be at least 3 characters.");
         return;
       }
 
@@ -49,14 +49,14 @@ export function useContact() {
       const noSpecialChars = /^[a-zA-Z\s]+$/;
       if (!noSpecialChars.test(trimmedName)) {
         setStatusType("error");
-        setStatus("Maaf, Nama tidak boleh karakter spesial");
+        setStatus("Sorry, Name cannot contain special characters");
         return;
       }
 
       // Validation Pesan Minimal 5 Karakter
       if (trimmedMessage.length < 5) {
         setStatusType("error");
-        setStatus("Maaf, Pesan minimal 5 karakter.");
+        setStatus("Sorry, Minimum message 5 characters.");
         return;
       }
 
@@ -78,7 +78,7 @@ export function useContact() {
       }
 
       setStatusType("success");
-      setStatus(`Hi ${trimmedName}, kita sekarang teman :).`);
+      setStatus(`Successfully sent message, Thans for your message :).`);
       setEmail("");
       setName("");
       setMessage("");
