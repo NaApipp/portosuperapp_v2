@@ -119,6 +119,10 @@ export const projectData: ProjectData[] = [
         label: "Dashboard",
         href: "https://greencodev3.vercel.app/login-dashboard",
       },
+      {
+        label: "Document",
+        href: "https://github.com/NaApipp/greencode_refactor?tab=readme-ov-file#readme",
+      },
     ],
   },
 ];
