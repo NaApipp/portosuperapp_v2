@@ -7,7 +7,7 @@ export type ProjectData = {
   project_desc: string;
   tech_stack?: string;
   project_type: ProjectType;
-  links?: { label: string; href: string }[];
+  links: {icon?:string; label: string; href: string }[];
 };
 
 export const projectData: ProjectData[] = [
@@ -120,7 +120,7 @@ export const projectData: ProjectData[] = [
         href: "https://greencodev3.vercel.app/login-dashboard",
       },
       {
-        label: "Document",
+        label: "Git",
         href: "https://github.com/NaApipp/greencode_refactor?tab=readme-ov-file#readme",
       },
     ],
