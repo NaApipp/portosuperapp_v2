@@ -37,8 +37,8 @@ export const projectData: ProjectData[] = [
     project_name: "UI Design Rent Car",
     project_desc:
       "I designed an application for Car Rental. This design helps to rent vehicles more efficiently and practically. The design is responsive, intuitive, and attractive, making it easy to use on various devices.",
-    tech_stack:"-",
-      links: [
+    tech_stack: "-",
+    links: [
       {
         label: "Figma",
         href: "https://www.figma.com/design/pr4Aq1YidB8YRMuJji62wU/Design-Aplikasi-Sewa-Mobil?node-id=0-1&t=hEefgeNzbCZ6wGrg-1",
@@ -54,8 +54,8 @@ export const projectData: ProjectData[] = [
     project_name: "CoffeeShop Web Template",
     project_desc:
       "I provide a web application template for Coffee Shops. This website features menu viewing and ordering capabilities. The design is responsive and attractive, making it comfortable to use on various devices.",
-    tech_stack:"PHP Native",
-      links: [
+    tech_stack: "PHP Native",
+    links: [
       {
         label: "Github",
         href: "https://github.com/NaApipp/apps-coffee",
@@ -75,8 +75,8 @@ export const projectData: ProjectData[] = [
     project_name: "School Profile",
     project_desc:
       "This project website is a duplicate of the 'Re-Design official website' project from my own school, SMK Negeri 4 Kendal. The difference is that in this project I used WordPress technology for time efficiency.",
-    tech_stack:"Elementor Pro",
-      links: [
+    tech_stack: "Elementor Pro",
+    links: [
       {
         label: "Demo",
         href: "https://dev-sschooll.pantheonsite.io/",
@@ -92,11 +92,32 @@ export const projectData: ProjectData[] = [
     project_name: "MASTERJAVA Project",
     project_desc:
       "This project website is a duplicate of the 'Re-Design official website' project from my own school, SMK Negeri 4 Kendal. The difference is that in this project I used WordPress technology for time efficiency.",
-    tech_stack:"Next.JS, TailwindCSS, MongoDB",
-      links: [
+    tech_stack: "Next.JS, TailwindCSS, MongoDB",
+    links: [
       {
         label: "Demo",
         href: "https://rpl3-23.vercel.app/",
+      },
+    ],
+  },
+
+  // Project GreenCode V6
+  {
+    id: "6",
+    project_type: "Website Development",
+    image: "/asset/image/project-image/Cover-GreenCode.png",
+    project_name: "GreenCode Web V3",
+    project_desc:
+      "A web application for managing B3 (hazardous and toxic) waste, designed with a responsive and attractive user interface. This platform helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
+    tech_stack: "Next.JS, TailwindCSS, MongoDB",
+    links: [
+      {
+        label: "Beranda",
+        href: "https://greencodev3.vercel.app/",
+      },
+      {
+        label: "Dashboard",
+        href: "https://greencodev3.vercel.app/login-dashboard",
       },
     ],
   },
