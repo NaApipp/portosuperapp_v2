@@ -125,6 +125,22 @@ export const projectData: ProjectData[] = [
       },
     ],
   },
+  // Project Scholl Profile
+  {
+    id: "7",
+    project_type: "Wordpress",
+    image: "/asset/image/project-image/school-profile.png",
+    project_name: "UMKM Nabil Catering Site",
+    project_desc:
+      "This project website is a duplicate of the 'Re-Design official website' project from my own school, SMK Negeri 4 Kendal. The difference is that in this project I used WordPress technology for time efficiency.",
+    tech_stack: "Elementor Pro",
+    links: [
+      {
+        label: "Demo",
+        href: "https://dev-nabilcatering.pantheonsite.io/",
+      },
+    ],
+  },
 ];
 
 export const filterProjectsByType = (type: ProjectType | "all") => {
