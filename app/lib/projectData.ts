@@ -120,7 +120,7 @@ export const projectData: ProjectData[] = [
         href: "https://greencodev3.vercel.app/login-dashboard",
       },
       {
-        label: "Document",
+        label: "Doc",
         href: "https://github.com/NaApipp/greencode_refactor?tab=readme-ov-file#readme",
       },
     ],
@@ -129,10 +129,10 @@ export const projectData: ProjectData[] = [
   {
     id: "7",
     project_type: "Wordpress",
-    image: "/asset/image/project-image/school-profile.png",
-    project_name: "UMKM Nabil Catering Site",
+    image: "/asset/image/project-image/UMKM-profile-Web.png",
+    project_name: "UMKM Profile WEB",
     project_desc:
-      "This project website is a duplicate of the 'Re-Design official website' project from my own school, SMK Negeri 4 Kendal. The difference is that in this project I used WordPress technology for time efficiency.",
+      "This project website aims to help UMKM entrepreneurs who want to reach customers from outside their region. I used WordPress for this project to save time.",
     tech_stack: "Elementor Pro",
     links: [
       {
