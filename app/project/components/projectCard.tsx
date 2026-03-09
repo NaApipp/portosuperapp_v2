@@ -30,7 +30,7 @@ export default function projectCard({ project }: { project: ProjectData }) {
 
 
           {project.links?.length ? (
-            <div className="mt-4 flex flex-wrap gap-2 justify-center md:justify-start ">
+            <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
               {project.links.map((l) => {
                 const isExternal = /^https?:\/\//.test(l.href);
                 // Button Link

@@ -38,8 +38,8 @@ export default function age() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "RPL 3 - SMKN 4 Kendal (Angkatan 23)",
-              url: "https://rpl3-23.vercel.app/",
+              name: "Nabil Arif Porto",
+              url: "https://appsporto.vercel.app/",
             }),
           }}
         />

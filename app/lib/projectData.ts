@@ -120,8 +120,24 @@ export const projectData: ProjectData[] = [
         href: "https://greencodev3.vercel.app/login-dashboard",
       },
       {
-        label: "Git",
+        label: "Doc",
         href: "https://github.com/NaApipp/greencode_refactor?tab=readme-ov-file#readme",
+      },
+    ],
+  },
+  // Project Scholl Profile
+  {
+    id: "7",
+    project_type: "Wordpress",
+    image: "/asset/image/project-image/UMKM-profile-Web.png",
+    project_name: "UMKM Profile WEB",
+    project_desc:
+      "This project website aims to help UMKM entrepreneurs who want to reach customers from outside their region. I used WordPress for this project to save time.",
+    tech_stack: "Elementor Pro",
+    links: [
+      {
+        label: "Demo",
+        href: "https://dev-nabilcatering.pantheonsite.io/",
       },
     ],
   },
