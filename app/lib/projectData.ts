@@ -7,7 +7,7 @@ export type ProjectData = {
   project_desc: string;
   tech_stack?: string;
   project_type: ProjectType;
-  links?: { label: string; href: string }[];
+  links: {icon?:string; label: string; href: string }[];
 };
 
 export const projectData: ProjectData[] = [
@@ -105,10 +105,10 @@ export const projectData: ProjectData[] = [
   {
     id: "6",
     project_type: "Website Development",
-    image: "/asset/image/project-image/Cover-GreenCode.png",
+    image: "/asset/image/project-image/greencode-v3.png",
     project_name: "GreenCode Web V3",
     project_desc:
-      "A web application for managing B3 (hazardous and toxic) waste, designed with a responsive and attractive user interface. This platform helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
+      "The system includes new AI-powered support features and a comprehensive dashboard for complaint management.",
     tech_stack: "Next.JS, TailwindCSS, MongoDB",
     links: [
       {
@@ -125,7 +125,8 @@ export const projectData: ProjectData[] = [
       },
     ],
   },
-  // Project Scholl Profile
+
+  // Project UMKM Profile
   {
     id: "7",
     project_type: "Wordpress",
