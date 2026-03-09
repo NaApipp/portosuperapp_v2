@@ -140,6 +140,10 @@ export const projectData: ProjectData[] = [
         label: "Demo",
         href: "https://dev-nabilcatering.pantheonsite.io/",
       },
+      {
+        label: "Figma",
+        href: "https://www.figma.com/design/QjgXi6yNbZA4W9K8iw7BnU/Nabil-Catering?node-id=0-1&t=7oHFdApomfwXaWrr-1",
+      },
     ],
   },
 ];
