@@ -8,7 +8,7 @@ import {
 } from "@/app/lib/projectData";
 import ProjectCard from "./components/projectCard";
 import Footer from "./components/footer";
-import Navbar from "./components/navbar";
+import Navbar from "../components/navbar";
 
 
 type FilterType = ProjectType | "all";
@@ -30,8 +30,8 @@ export default function Project() {
 
   return (
     <>
-      <Navbar />
-      <main className="pl-10 pr-10 pb-20 pt-20 bg-[#08152F]">
+      {/* <Navbar /> */}
+      <main className="pl-10 pr-10 pb-20 pt-10 bg-[#08152F]">
         {/* Tittle */}
         <div className="flex flex-col md:flex-col md:gap-2 gap-3 items-center m-7">
           <h1 className="font-extrabold font-bebas text-3xl md:text-5xl text-sky-500">Project Showcase </h1>

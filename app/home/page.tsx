@@ -45,7 +45,6 @@ export default function age() {
         />
     </Head>
       <div className="bg-[#08152F]">
-        <Navbar />
         <main>
         <Hero/>
         <Education/>
