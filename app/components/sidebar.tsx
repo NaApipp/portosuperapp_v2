@@ -19,7 +19,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="custom-scroll h-screen w-64 flex flex-col border-e bg-[#102D41] overflow-y-auto">
+    <div className="custom-scroll h-screen w-64 flex flex-col border-e bg-[#102D41] overflow-y-auto hidden lg:block">
       <div className="px-4 py-6">
         <span className="ml-4 flex items-center gap-1 text-white">
           <Image
