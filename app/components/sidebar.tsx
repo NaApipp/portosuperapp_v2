@@ -219,7 +219,7 @@ function WeatherCard() {
       .then(data => setWeather(data))
   }, [])
 
-  if (!weather ||  !weather.current) return <p>Loading...</p>
+  if (!weather) return <p>Loading...</p>
 
   return (
     <div className="rounded-[24px] bg-[#08152F] p-4">
