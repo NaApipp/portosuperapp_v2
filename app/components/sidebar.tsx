@@ -219,12 +219,12 @@ function WeatherCard() {
       .then(data => setWeather(data))
   }, [])
 
-  if (!weather) return <p>Loading...</p>
+  if (!weather ||  !weather.current) return <p>Loading...</p>
 
   return (
     <div className="rounded-[24px] bg-[#08152F] p-4">
         <div className="flex flex-col items-center gap-2">
-            <h1 className="text-[55px] font-bold font-inter leading-none text-[#00BCFF]">{weather.current.temp_c}°C</h1>
+            <h1 className="text-[55px] font-bold font-inter leading-none text-[#00BCFF]">{weather?.current?.temp_c ? `${weather.current.temp_c}°C` : "Loading..."}</h1>
             <span className="text-[15px] font-medium font-inter text-[#00BCFF]">{weather.location.name}, Indonesia</span>
             
             {/* Gray Divider */}
