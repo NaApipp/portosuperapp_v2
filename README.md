@@ -1,8 +1,35 @@
-<!-- SHORTCUT VIEW README MD [CTRL + SHIF + V] gi -->
+## 📞 Contact Developer
 
-# ENV
-MONGODB_URI=mongodb+srv://apip_user:apip_password@cluster0.zpvcqzw.mongodb.net/?appName=Cluster0
+If you have any questions, feedback, or collaboration ideas, feel free to reach out:
 
-GITHUB_TOKEN=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
+### 👨‍💻 Developer
 
-GITHUB_USERNAME=NaApipp
+**Nabil Arif Triyanto**
+
+
+### 💬 Social & Professional
+
+* GitHub: https://github.com/NaApipp
+* LinkedIn: https://linkedin.com/in/nabilariftriyanto
+* Instagram: https://instagram.com/n_apipppp/
+
+---
+
+### 🚀 Support & Issues
+
+If you encounter any bugs or issues while using this project:
+
+* Open an issue on GitHub
+* Or contact me directly via email
+
+---
+
+### 🤝 Collaboration
+
+I'm open to:
+
+* Project collaboration
+* Freelance opportunities
+* Tech discussions
+
+Don’t hesitate to reach out!
