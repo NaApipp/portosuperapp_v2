@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Sidebar from "./components/sidebar";
+import Navbar from "./components/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,8 +24,6 @@ export const metadata: Metadata = {
     "AppsPorto adalah platform sistem manajemen parkir yang modern, efisien, dan mudah digunakan.",
   applicationName: "AppsPorto",
   authors: [{ name: "Nabil Arif", url: "https://appsporto.vercel.app" }],
-  
-  
 
   // ✅ Robots — izinkan semua crawler
   robots: {
@@ -56,12 +56,11 @@ export const metadata: Metadata = {
   // ✅ Open Graph — lengkap
   openGraph: {
     title: "AppsPorto",
-    description:
-      "AppsPorto adalah Portfolio Nabil Arif",
+    description: "AppsPorto adalah Portfolio Nabil Arif",
     url: "https://appsporto.vercel.app",
     siteName: "AppsPorto",
-    locale: "id_ID",         // 🆕 locale Indonesia
-    type: "website",         // 🆕 type konten
+    locale: "id_ID", // 🆕 locale Indonesia
+    type: "website", // 🆕 type konten
     images: [
       {
         url: "/asset/image/logo/logo_apip_white.png",
@@ -76,8 +75,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AppsPorto",
-    description:
-      "AppsPorto adalah Portfolio Nabil Arif.",
+    description: "AppsPorto adalah Portfolio Nabil Arif.",
     images: ["/asset/image/logo/logo_apip_white.png"],
   },
 
@@ -95,7 +93,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex h-screen bg-gray-50/50 dark:bg-[#08152F]">
+          <Sidebar />
+          <div className="flex flex-col flex-1 overflow-hidden">
+            
+            {/* Navbar hanya mobile & tablet */}
+            <Navbar />
+
+            <main className="flex-1 overflow-y-auto">
+              {children}
+            </main>
+
+          </div>
+        </div>
       </body>
     </html>
   );

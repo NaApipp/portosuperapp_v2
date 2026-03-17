@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"); /* Lolita One */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"); /* Bebas Neue */
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap"); /* Silkscreen */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"); /* Inter */
 
 /* Swiper ibrary */
 @import "swiper/css";
@@ -20,6 +21,7 @@
   --font-lolita: "Lilita One", sans-serif;
   --font-bebas: "Bebas Neue", sans-serif;
   --font-game: "Silkscreen", sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
 
 @layer components {
@@ -81,4 +83,24 @@ html {
 /* Swiepr Animaton */
 .swiper-wrapper {
   transition-timing-function: linear !important;
+}
+
+
+
+/* Custom Scrollbar for sidebar */
+.custom-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #00BCFF;
+  border-radius: 20px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #1e40af;
 }

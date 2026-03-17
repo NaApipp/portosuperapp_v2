@@ -9,7 +9,7 @@ export default function Navbar() {
   const close = () => setOpen(false);
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 bg-[#102D41]">
+    <nav className="lg:hidden fixed inset-x-0 top-0 z-50 bg-[#102D41]">
       {/* bar atas */}
       <div className="max-w-screen-xl mx-auto flex h-16 items-center justify-between px-4 relative">
         <Link href="/project" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -91,6 +91,15 @@ export default function Navbar() {
                 className="animasi-navbar block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
               >
                 Experience
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/project"
+                onClick={close}
+                className="animasi-navbar block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+              >
+                Project
               </Link>
             </li>
             <li>
