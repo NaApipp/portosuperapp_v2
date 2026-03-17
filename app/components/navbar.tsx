@@ -95,6 +95,15 @@ export default function Navbar() {
             </li>
             <li>
               <Link
+                href="/project"
+                onClick={close}
+                className="animasi-navbar block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+              >
+                Project
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/home#contact"
                 onClick={close}
                 className="animasi-navbar block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
