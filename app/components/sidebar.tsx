@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Mail, ChevronRight, Home, BookOpen, Coffee, Gamepad2, Sun, Moon, BotMessageSquare, Wrench } from "lucide-react";
+import { Mail, ChevronRight, Home, BookOpen, Coffee, Gamepad2, Sun, Moon, BotMessageSquare, Wrench, Wind, Cloud, Droplet } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -223,23 +223,25 @@ function WeatherCard() {
             {/* Gray Divider */}
             <div className="h-px w-12 bg-gray-500/50 my-2"></div>
         </div>
-        <div className="flex flex-col">
-            <h1 className="uppercase font-bold text-gray-600">status</h1>
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col">
+            <h1 className="uppercase font-bold text-gray-600 flex gap-2 items-center"><Cloud size={19} /> status</h1>
             <span className="text-[13px] font-medium font-inter text-white capitalize">
                 {weather.current.condition.text}
             </span>
         </div>
         <div className="flex flex-col">
-            <h1 className="uppercase font-bold text-gray-600">humidity</h1>
+            <h1 className="uppercase font-bold text-gray-600 flex gap-2 items-center"><Droplet size={19} /> humidity</h1>
             <span className="text-[13px] font-medium font-inter text-white capitalize">
                 {weather.current.humidity}%
             </span>
         </div>
         <div className="flex flex-col">
-            <h1 className="uppercase font-bold text-gray-600">wind</h1>
+            <h1 className="uppercase font-bold text-gray-600 flex gap-2 items-center"><Wind size={19} /> wind</h1>
             <span className="text-[13px] font-medium font-inter text-white capitalize">
                 {weather.current.wind_kph} km/h
             </span>
+        </div>
         </div>
     </div>
   );
