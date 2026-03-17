@@ -110,8 +110,8 @@ export default function Sidebar() {
               <ul className="mt-2 space-y-1 px-4">
                 <li>
                   <Link
-                    href="/playground/apps-ai"
-                    className={getLinkStyle("/playground/apps-ai")}
+                    href="/coming-soon"
+                    className={getLinkStyle("/coming-soon")}
                   >
                     Apps AI
                   </Link>
@@ -119,8 +119,8 @@ export default function Sidebar() {
 
                 <li>
                   <Link
-                    href="/playground/tools"
-                    className={getLinkStyle("/playground/tools")}
+                    href="/coming-soon"
+                    className={getLinkStyle("/coming-soon")}
                   >
                     Tools
                   </Link>
