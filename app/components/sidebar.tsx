@@ -214,8 +214,8 @@ function WeatherCard() {
     const [weather, setWeather] = useState<WeatherData | null>(null)
 
   useEffect(() => {
-    fetch("/api/weather?city=Bogor")
-    // fetch("/api/weather?city=Semarang")
+    // fetch("/api/weather?city=Bogor")
+    fetch("/api/weather?city=Semarang")
       .then(res => res.json())
       .then(data => setWeather(data))
   }, [])

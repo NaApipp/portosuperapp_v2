@@ -16,7 +16,7 @@ export default function Hero() {
           <p className="md:text-4xl text-2xl font-poppins font-semibold">
             Hey, I'm
           </p>
-          <h1 className="font-lolita text-3xl md:text-6xl">
+          <h1 className="font-lolita text-3xl md:text-5xl">
             <TypeAnimation
               sequence={["Nabil Arif Triyanto", 2000]}
               speed={50}
