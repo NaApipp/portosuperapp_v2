@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Mail, ChevronRight, Home, BookOpen, Coffee, Gamepad2, Sun, Moon } from "lucide-react";
+import { Mail, ChevronRight, Home, BookOpen, Coffee, Gamepad2, Sun, Moon, BotMessageSquare, Wrench, Wind, Cloud, Droplet } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -89,40 +89,32 @@ export default function Sidebar() {
 
           <li>
             <details className="group [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-white hover:bg-indigo-700 hover:text-white">
-                <span className="font-bold font-inter flex items-center gap-2">  <Gamepad2 /> Playground </span>
+              <summary className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition-colors duration-200">
+                <span className="flex items-center gap-4">
+                  <Gamepad2 />
+                  <span className="font-bold font-inter">Playground</span>
+                </span>
                 <span className="shrink-0 transition duration-300 group-open:-rotate-180">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="size-5 text-white"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                  <ChevronRight size={18} />
                 </span>
               </summary>
 
-              <ul className="mt-2 space-y-1 px-4">
+              <ul className="mt-2 space-y-1 px-4 border-l border-white/10 ml-6">
                 <li>
                   <Link
-                    href="/playground/apps-ai"
-                    className={getLinkStyle("/playground/apps-ai")}
+                    href="/coming-soon"
+                    className={getLinkStyle("/coming-soon")}
                   >
-                    Apps AI
+                    <span className="ml-2 text-xs opacity-80 flex items-center gap-2"><BotMessageSquare /> Apps AI</span>
                   </Link>
                 </li>
 
                 <li>
                   <Link
-                    href="/playground/tools"
-                    className={getLinkStyle("/playground/tools")}
+                    href="/coming-soon"
+                    className={getLinkStyle("/coming-soon")}
                   >
-                    Tools
+                    <span className="ml-2 text-xs opacity-80 flex items-center gap-2"><Wrench /> Tools</span>
                   </Link>
                 </li>
               </ul>
@@ -231,23 +223,25 @@ function WeatherCard() {
             {/* Gray Divider */}
             <div className="h-px w-12 bg-gray-500/50 my-2"></div>
         </div>
-        <div className="flex flex-col">
-            <h1 className="uppercase font-bold text-gray-600">status</h1>
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col">
+            <h1 className="uppercase font-bold text-gray-600 flex gap-2 items-center"><Cloud size={19} /> status</h1>
             <span className="text-[13px] font-medium font-inter text-white capitalize">
                 {weather.current.condition.text}
             </span>
         </div>
         <div className="flex flex-col">
-            <h1 className="uppercase font-bold text-gray-600">humidity</h1>
+            <h1 className="uppercase font-bold text-gray-600 flex gap-2 items-center"><Droplet size={19} /> humidity</h1>
             <span className="text-[13px] font-medium font-inter text-white capitalize">
                 {weather.current.humidity}%
             </span>
         </div>
         <div className="flex flex-col">
-            <h1 className="uppercase font-bold text-gray-600">wind</h1>
+            <h1 className="uppercase font-bold text-gray-600 flex gap-2 items-center"><Wind size={19} /> wind</h1>
             <span className="text-[13px] font-medium font-inter text-white capitalize">
                 {weather.current.wind_kph} km/h
             </span>
+        </div>
         </div>
     </div>
   );
