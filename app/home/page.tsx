@@ -7,7 +7,7 @@ import SeeProject from "./components/SeeProject";
 import Footer from "./components/footer";
 import Head from "next/head";
 
-export default function age() {
+export default function Page() {
   return (
     <>
     <Head>
