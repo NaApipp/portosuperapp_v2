@@ -29,7 +29,7 @@ const experience: Experience[] = [
       "Work in FullStack Developer",
     ],
     links: [
-      { label: "Access Here", href: "https://greencode-v2.vercel.app/" },
+      { label: "Access Here", href: "https://greencodev2.vercel.app/" },
     ],
   },
 ];
