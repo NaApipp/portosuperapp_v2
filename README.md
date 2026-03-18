@@ -12,6 +12,7 @@ If you have any questions, feedback, or collaboration ideas, feel free to reach 
 * GitHub: https://github.com/NaApipp
 * LinkedIn: https://linkedin.com/in/nabilariftriyanto
 * Instagram: https://instagram.com/n_apipppp/
+* Email: [EMAIL_ADDRESS]
 
 ---
 
