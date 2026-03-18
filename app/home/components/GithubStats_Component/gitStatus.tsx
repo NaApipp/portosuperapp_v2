@@ -48,7 +48,7 @@ export default async function GitHubStats() {
 
   return (
     <section className="mt-20 pl-10 pr-10">
-      <h1 className="font-bebas text-center text-5xl font-semibold text-white">
+      <h1 className="font-bebas text-center text-5xl font-semibold text-[#08152F] dark:text-white">
         GitHub Statistics
       </h1>
 
