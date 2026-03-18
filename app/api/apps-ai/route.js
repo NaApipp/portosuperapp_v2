@@ -1,8 +1,41 @@
+import { getContext } from "@/app/lib/openAi/rag";
+import { getHistory } from "@/app/lib/openAi/memory";
+
 export async function POST(req) {
   try {
     const body = await req.json();
-    const userMessage = body.message;
 
+    const messages = body.messages || [];
+    const lastUserMessage = messages[messages.length - 1]?.content || "";
+
+    // 🔹 1. Get Context from RAG
+    const context = await getContext(lastUserMessage);
+
+    // 🔹 2. Get History from Memory
+    const history = getHistory(messages, 10);
+
+    const systemPrompt = `
+# IDENTITY & CORE PURPOSE
+Anda adalah Apps AI, kecerdasan buatan tingkat lanjut yang bertugas memberikan informasi general milik Nabil Arif. Misi utama Anda adalah membantu pengguna memahami project dan keahlian Nabil.
+
+# CONTEXT (RAG Data)
+Gunakan informasi berikut jika relevan dengan pertanyaan:
+${context}
+
+# COMMUNICATION PROTOCOLS
+1. Tone & Style: Profesional, efisien, canggih, dan membantu. Hindari basa-basi berlebihan.
+2. Formatting: Gunakan bullet points atau penomoran untuk instruksi teknis agar mudah dibaca.
+3. Conciseness: Jawab dengan singkat, padat, jelas, dan langsung pada pokok permasalahan.
+4. Human-like Interaction: Gunakan gaya bahasa profesional dan natural.
+5. Error Tolerance: Jika terdapat typo ringan (contoh: "saipa" → "siapa"), lakukan koreksi otomatis secara implisit.
+
+# REFUSAL RESPONSE (STRICT FORMAT)
+Jika pertanyaan benar-benar di luar domain informasi Nabil Arif atau context yang diberikan:
+"Maaf, saya tidak mengerti mengenai hal tersebut, apakah bisa ulangi pertanyaan anda?"
+Tidak boleh menambah informasi lain.
+`;
+
+    // 🔹 3. Call Groq with Context & History
     const response = await fetch(
       "https://api.groq.com/openai/v1/chat/completions",
       {
@@ -14,75 +47,42 @@ export async function POST(req) {
         body: JSON.stringify({
           model: "llama-3.1-8b-instant",
           messages: [
-            {
-              role: "system",
-              content: `
-# IDENTITY & CORE PURPOSE
-Anda adalah Apps AI, kecerdasan buatan tingkat lanjut yang bertugas memberikann informasi general milik Nabil Arif. Misi utama Anda adalah memberikan informasi general kepada pengguna. Anda HANYA beroperasi dalam domain informasi general.
-
-
-# COMMUNICATION PROTOCOLS
-1.  Tone & Style: Profesional, efisien, canggih, dan membantu. Hindari basa-basi berlebihan.
-2.  Formatting: Gunakan bullet points atau penomoran untuk instruksi teknis agar mudah dibaca.
-3.  Conciseness: Jawab dengan singkat, padat, jelas, dan langsung pada pokok permasalahan.
-4.  Human-like Interaction: Gunakan gaya bahasa profesional dan natural layaknya berkonsultasi dengan pakar ahli.
-5.  Error Tolerance: Jika terdapat typo ringan atau kesalahan ejaan (contoh: "saipa" → "siapa", "saiap" → "siapa"), lakukan koreksi otomatis secara implisit tanpa menyalahkan pengguna.
-6.  Error Tolerance: Jika maksud pengguna masih dapat dipahami meskipun terdapat kesalahan ketik, tetap berikan jawaban yang sesuai.
-7.  Error Tolerance: Jika benar-benar tidak dapat dipahami, minta klarifikasi dengan sopan.
-8.  Error Tolerance: Hindari mengatakan bahwa Anda hanya mengerti kata tertentu; tetap fleksibel dalam memahami variasi bahasa pengguna.
-
-# REFUSAL RESPONSE (STRICT FORMAT)
-Gunakan EXACT text berikut:
-
-"Maaf, saya tidak mengerti mengenai hal tersebut, apakah bisa ulangi pertanyaan anda?"
-
-Tidak boleh menambah informasi lain.
-
-`,
-            },
-            {
-              role: "user",
-              content: userMessage,
-            },
+            { role: "system", content: systemPrompt },
+            ...history,
           ],
         }),
-      },
+      }
     );
 
     const data = await response.json();
 
-    console.log("GROQ RESPONSE:", data);
-
-    // GET User Question
-    const aiReply = data?.choices?.[0]?.message?.content;
-
-    // LOG INTERACTION
-    console.log(`
-      [EcoSentra AI Interaction Log]
-      User Question : ${userMessage}
-      AI Response   : ${aiReply}
-      Tokens Used   : ${data?.usage?.total_tokens || 0}
-    `);
-
-    // ✅ cek jika ada error dari Groq
     if (!data.choices) {
+      console.error("GROQ ERROR:", data);
       return Response.json({
-        userQuestion: userMessage,
-        reply: "AI sedang error.",
+        reply: "AI sedang error. Silakan coba lagi.",
         error: data,
       });
     }
 
+    const aiReply = data.choices[0].message.content;
+
+    // LOG INTERACTION
+    console.log(`
+      [EcoSentra AI Interaction Log]
+      User Question : ${lastUserMessage}
+      AI Response   : ${aiReply}
+      Tokens Used   : ${data?.usage?.total_tokens || 0}
+    `);
+
     return Response.json({
-      userQuestion: userMessage,
-      reply: data.choices[0].message.content,
+      reply: aiReply,
     });
   } catch (error) {
-    console.error(error);
+    console.error("ROUTE ERROR:", error);
 
     return Response.json(
-      { userQuestion: userMessage, error: "Server error" },
-      { status: 500 },
+      { error: "Server error", details: error.message },
+      { status: 500 }
     );
   }
 }
