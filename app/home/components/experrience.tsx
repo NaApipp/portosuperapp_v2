@@ -87,7 +87,7 @@ export default function Experience() {
 
                   {exp.links?.map((l) => (
                     <DetailItem key={l.href}>
-                      <span className="text-zinc-300 font-semibold">{l.label}: </span>
+                      <span className="dark:text-zinc-300 text-zinc-500 font-semibold">{l.label}: </span>
                       <a
                         href={l.href}
                         target="_blank"
