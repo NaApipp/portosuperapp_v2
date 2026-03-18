@@ -44,8 +44,12 @@ export default function Hero() {
               <Instagram className="hover:text-gray-500 cursor-pointer transition-colors duration-300 border border-2 border-gray-600 p-3 rounded-2xl w-12 h-auto" />
             </Link>
           </div>
-          <div className="">
-            <h1 className="font-poppins font-semibold text-2xl">About</h1>
+          <div className="bg-[#102D41]/30 p-5 rounded-2xl shadow-2xl">
+            <div className="flex items-center gap-2">
+              <div className="border border-white w-7"></div>
+              <h1 className="font-poppins font-semibold text-2xl">About</h1>
+            </div>
+            
             <p className="font-inter font-medium text-gray-400">
               I’m a full-stack developer specializing in React, Next.js, and
               TypeScript. I enjoy building fast, scalable, and intuitive web
