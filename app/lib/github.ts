@@ -2,22 +2,36 @@ const GITHUB_API = "https://api.github.com";
 
 export async function getGitHubStats() {
   try {
-    if (!process.env.GITHUB_USERNAME) {
-      console.warn("GITHUB_USERNAME is not defined");
+    const username = process.env.GITHUB_USERNAME?.trim();
+    const token = process.env.GITHUB_TOKEN?.trim();
+
+    if (!username) {
+      console.warn("GITHUB_USERNAME is missing from .env");
       return { public_repos: 0, followers: 0 };
     }
 
+    const headers: HeadersInit = {
+      "User-Agent": "nextjs-portfolio",
+    };
+
+    if (token) {
+      headers["Authorization"] = `Bearer ${token}`;
+    }
+
     const res = await fetch(
-      `${GITHUB_API}/users/${process.env.GITHUB_USERNAME}`,
+      `${GITHUB_API}/users/${username}`,
       {
-        headers: {
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        },
+        headers,
         next: { revalidate: 300 },
       }
     );
 
-    if (!res.ok) return { public_repos: 0, followers: 0 };
+    if (!res.ok) {
+      console.error(`GitHub API Error (Stats): ${res.status} ${res.statusText}`);
+      // If unauthorized, maybe the token is wrong. Try to use it as a hint for the user.
+      if (res.status === 401) console.error("Verify your GITHUB_TOKEN permissions and validity.");
+      return { public_repos: 0, followers: 0 };
+    }
     return res.json();
   } catch (error) {
     console.error("Error fetching GitHub stats:", error);
@@ -27,19 +41,31 @@ export async function getGitHubStats() {
 
 export async function getGitHubRepos() {
   try {
-    if (!process.env.GITHUB_USERNAME) return [];
+    const username = process.env.GITHUB_USERNAME?.trim();
+    const token = process.env.GITHUB_TOKEN?.trim();
+
+    if (!username) return [];
+
+    const headers: HeadersInit = {
+      "User-Agent": "nextjs-portfolio",
+    };
+
+    if (token) {
+      headers["Authorization"] = `Bearer ${token}`;
+    }
 
     const res = await fetch(
-      `${GITHUB_API}/users/${process.env.GITHUB_USERNAME}/repos?per_page=100`,
+      `${GITHUB_API}/users/${username}/repos?per_page=100`,
       {
-        headers: {
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        },
+        headers,
         next: { revalidate: 300 },
       }
     );
 
-    if (!res.ok) return [];
+    if (!res.ok) {
+      console.error(`GitHub API Error (Repos): ${res.status} ${res.statusText}`);
+      return [];
+    }
     return res.json();
   } catch (error) {
     console.error("Error fetching GitHub repos:", error);
@@ -49,7 +75,11 @@ export async function getGitHubRepos() {
 
 export async function getGitHubContributions() {
   try {
-    if (!process.env.GITHUB_USERNAME || !process.env.GITHUB_TOKEN) {
+    const username = process.env.GITHUB_USERNAME?.trim();
+    const token = process.env.GITHUB_TOKEN?.trim();
+
+    if (!username || !token) {
+      console.warn("GITHUB_USERNAME or GITHUB_TOKEN is missing for GraphQL");
       return { totalContributions: 0, weeks: [] };
     }
 
@@ -75,12 +105,13 @@ export async function getGitHubContributions() {
     const res = await fetch("https://api.github.com/graphql", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
+        "User-Agent": "nextjs-portfolio",
       },
       body: JSON.stringify({
         query,
-        variables: { login: process.env.GITHUB_USERNAME },
+        variables: { login: username },
       }),
       next: { revalidate: 300 },
     });
@@ -93,7 +124,7 @@ export async function getGitHubContributions() {
     }
 
     if (!json.data?.user) {
-      console.warn("GitHub user data not found in GraphQL response");
+      console.warn("GitHub user data not found in GraphQL response.");
       return { totalContributions: 0, weeks: [] };
     }
 
