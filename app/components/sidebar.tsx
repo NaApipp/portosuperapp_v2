@@ -11,7 +11,7 @@ export default function Sidebar() {
 
   const getLinkStyle = (href: string) => {
     const isActive = pathname === href;
-    return `block flex items-center gap-4 rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+    return `block flex items-center gap-4 rounded-lg px-4 py-2 text-sm font-medium transition-colors duration-200 mb-3 ${
       isActive 
         ? "bg-white text-[#0A1B39]" 
         : "text-white hover:bg-white/10"
@@ -19,7 +19,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="custom-scroll h-screen w-64 flex flex-col border-e bg-[#102D41] overflow-y-auto hidden lg:block">
+    <div className="custom-scroll h-screen w-64 flex flex-col border-e bg-[#0B192C] dark:bg-[#102D41] overflow-y-auto hidden lg:block">
       <div className="px-4 py-6">
         <span className="ml-4 flex items-center gap-1 text-white">
           <Image
@@ -215,7 +215,7 @@ function WeatherCard() {
   if (!weather) return <p>Loading...</p>
 
   return (
-    <div className="rounded-[24px] bg-[#08152F] p-4">
+    <div className="rounded-[24px] dark:bg-[#08152F]/70 bg-white/5 border border-gray-400 p-4">
         <div className="flex flex-col items-center gap-2">
             <h1 className="text-[55px] font-bold font-inter leading-none text-[#00BCFF]">{weather?.current?.temp_c ? `${weather.current.temp_c}°C` : "Loading..."}</h1>
             <span className="text-[15px] font-medium font-inter text-[#00BCFF]">{weather.location.name}, Indonesia</span>
@@ -226,19 +226,19 @@ function WeatherCard() {
         <div className="flex flex-col gap-4">
           <div className="flex flex-col">
             <h1 className="uppercase font-bold text-gray-600 flex gap-2 items-center"><Cloud size={19} /> status</h1>
-            <span className="text-[13px] font-medium font-inter text-white capitalize">
+            <span className="text-[13px] font-semibold font-inter text-white capitalize">
                 {weather.current.condition.text}
             </span>
         </div>
         <div className="flex flex-col">
             <h1 className="uppercase font-bold text-gray-600 flex gap-2 items-center"><Droplet size={19} /> humidity</h1>
-            <span className="text-[13px] font-medium font-inter text-white capitalize">
+            <span className="text-[13px] font-semibold font-inter text-white capitalize">
                 {weather.current.humidity}%
             </span>
         </div>
         <div className="flex flex-col">
             <h1 className="uppercase font-bold text-gray-600 flex gap-2 items-center"><Wind size={19} /> wind</h1>
-            <span className="text-[13px] font-medium font-inter text-white capitalize">
+            <span className="text-[13px] font-semibold font-inter text-white capitalize">
                 {weather.current.wind_kph} km/h
             </span>
         </div>
