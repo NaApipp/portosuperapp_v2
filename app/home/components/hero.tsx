@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <>
       <div
-        className="pl-10 pr-10 flex flex-col gap-5 pt-20 md:flex-row md:pt-16 md:min-h-screen"
+        className="pl-10 pr-10 flex flex-col-reverse gap-5 pt-20 md:flex-row md:pt-16 md:min-h-screen"
         id="home"
       >
         {/* Container 1 */}
