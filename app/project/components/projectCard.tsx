@@ -7,8 +7,8 @@ export default function projectCard({ project }: { project: ProjectData }) {
 
   return (
     <>
-      <article className="overflow-hidden rounded-2xl border border-neutral-200 text-white bg-[#2383AD]/40 shadow-sm transition hover:shadow-md transition-transform duration-500 ease-out hover:scale-105">
-        <div className="relative aspect-[16/9] w-full bg-neutral-100">
+      <article className="flex flex-col h-full overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-700 text-[#08152F] dark:text-white bg-white dark:bg-[#2383AD]/40 shadow-sm transition-all duration-500 ease-out hover:scale-[1.03] hover:shadow-xl dark:hover:shadow-none">
+        <div className="relative aspect-video w-full bg-neutral-100 shrink-0">
           <Image
             src={project.image}
             alt={project.project_name}
@@ -18,15 +18,17 @@ export default function projectCard({ project }: { project: ProjectData }) {
           />
         </div>
 
-        <div className="p-5">
-          <h3 className="text-lg font-semibold">{project.project_name}</h3>
+        <div className="p-6 flex flex-col flex-1">
+          <h3 className="text-xl font-bold tracking-tight">{project.project_name}</h3>
 
-          <p className="mt-2 line-clamp-3 text-sm leading-relaxed">
+          <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
             {project.project_desc}
           </p>
-          <p className="mt-2 mb-2 line-clamp-3 text-sm leading-relaxed font-bold">
-            Tech Stack: <span className="font-medium">{project.tech_stack}</span>
-          </p>
+          <div className="mt-4 mb-4">
+             <p className="text-sm leading-relaxed font-bold text-zinc-700 dark:text-zinc-200">
+                Tech Stack: <span className="font-medium text-zinc-500 dark:text-zinc-400">{project.tech_stack}</span>
+             </p>
+          </div>
 
 
           {project.links?.length ? (
@@ -40,7 +42,7 @@ export default function projectCard({ project }: { project: ProjectData }) {
                     href={l.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center rounded-full pl-7 pr-7 pt-2 font-poppins font-medium pb-2 font-poppins bg-[#2383AD] text-white transition hover:bg-sky-950"
+                    className="inline-flex items-center justify-center rounded-xl px-6 py-2.5 font-poppins font-semibold text-sm bg-[#2383AD] text-white transition-all duration-300 hover:bg-sky-700 dark:hover:bg-sky-950 hover:shadow-lg active:scale-95"
                   >
                     {l.label}
                   </a>
@@ -48,6 +50,7 @@ export default function projectCard({ project }: { project: ProjectData }) {
                   <Link
                     key={`${project.id}-${l.label}`}
                     href={l.href}
+                    className="inline-flex items-center justify-center rounded-xl px-6 py-2.5 font-poppins font-semibold text-sm bg-zinc-100 dark:bg-white/10 text-[#08152F] dark:text-white transition-all duration-300 hover:bg-zinc-200 dark:hover:bg-white/20"
                   >
                     {l.label}
                   </Link>

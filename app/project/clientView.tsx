@@ -31,11 +31,13 @@ export default function Project() {
   return (
     <>
       {/* <Navbar /> */}
-      <main className="pl-10 pr-10 pb-20 pt-10 bg-[#08152F]">
+      <main className="pl-10 pr-10 pb-20 pt-10 dark:bg-[#08152F] bg-[#F8FAFC]">
         {/* Tittle */}
         <div className="flex flex-col md:flex-col md:gap-2 gap-3 items-center m-7">
-          <h1 className="font-extrabold font-bebas text-3xl md:text-5xl text-sky-500">Project Showcase </h1>
-          <p className="font-extrabold font-poppins text-2xl md:text-5xl text-center">Selected works <br /> and highlights</p>
+          <h1 className="font-extrabold font-bebas text-3xl md:text-5xl text-sky-500">Project Showcase</h1>
+          <p className="font-extrabold font-poppins text-2xl md:text-5xl text-center text-[#08152F] dark:text-white">
+            Selected works <br /> and highlights
+          </p>
         </div>
         {/* FILTER BUTTONS */}
         <div className="flex flex-wrap justify-center gap-2 mb-6">
@@ -49,10 +51,10 @@ export default function Project() {
                 onClick={() => setActiveType(f.value)}
                 aria-pressed={isActive ? "true" : "false"}
                 className={[
-                  "px-4 py-2 rounded-full font-medium text-sm font-poppins border transition",
+                  "px-6 py-2 rounded-full font-semibold text-sm font-poppins border transition-all duration-300 shadow-sm",
                   isActive
-                    ? "bg-[#2383AD] text-white border-black cursor-not-allowed"
-                    : "bg-white text-black border-gray-300 cursor-pointer hover:border-[#2383AD] hover:bg-[#2383AD]/80 hover:text-white transition-all duration-500 ease-in-out",
+                    ? "bg-[#2383AD] text-white border-[#2383AD] cursor-not-allowed"
+                    : "bg-white dark:bg-zinc-800/50 text-[#08152F] dark:text-zinc-300 border-zinc-200 dark:border-zinc-700 cursor-pointer hover:border-[#2383AD] hover:bg-[#2383AD]/10 dark:hover:bg-[#2383AD]/20 transition-all duration-500 ease-in-out",
                 ].join(" ")}
               >
                 {f.label}
@@ -62,9 +64,9 @@ export default function Project() {
         </div>
 
         {/* LIST (pakai card kamu yang sudah ada) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
-            <div key={project.id}>
+            <div key={project.id} className="flex">
               {/* render card kamu di sini */}
               <ProjectCard project={project} />
             </div>
@@ -73,7 +75,7 @@ export default function Project() {
 
         {/* OPTIONAL: empty state */}
         {filteredProjects.length === 0 && (
-          <p className="text-sm text-gray-500">
+          <p className="text-center mt-10 text-zinc-500 dark:text-zinc-400">
             Tidak ada project untuk filter ini.
           </p>
         )}
