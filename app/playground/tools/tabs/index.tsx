@@ -16,7 +16,7 @@ export default function Tabs() {
   ];
 
   return (
-    <div style={{ display: "flex", gap: 16 }}>
+    <div style={{ display: "flex", gap: 16 }} className="bg-[#08152F]">
       {tabs.map((tab) => (
         <Link
           key={tab.value}

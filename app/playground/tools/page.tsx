@@ -16,8 +16,8 @@ export default async function ToolsPage({
   const { tab = "wpm" } = await searchParams;
 
   return (
-    <div>
-      <div className="flex flex-col gap-4 items-center justify-center mt-4">
+    <div className="bg-[#08152F]">
+      <div className="flex flex-col gap-4 items-center justify-center pt-4">
         <h1 className="flex items-center gap-2 text-2xl font-bold">
           {" "}
           <Wrench className="w-6 h-6" /> Tools
