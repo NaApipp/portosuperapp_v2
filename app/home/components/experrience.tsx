@@ -47,7 +47,7 @@ export default function Experience() {
     <section className="dark:bg-[#08152F] bg-[#F8FAFC] scroll-mt-20 py-24" id="experience">
       <div className="mx-auto max-w-6xl px-6 font-poppins font-semibold">
         {/* Header with line */}
-        <div className="flex items-center gap-6 mb-16 opacity-0 translate-y-10 transition-all duration-700 ease-out scroll-animate" >
+        <div className="flex items-center gap-6 mb-16" >
           <h2 className="font-bebas text-4xl font-semibold tracking-[0.1em] text-[#08152F] dark:text-zinc-100 uppercase">
             EXPERIENCE
           </h2>
