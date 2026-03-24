@@ -25,8 +25,8 @@ export default function Tabs() {
             fontWeight: activeTab === tab.value ? "bold" : "normal",
           }}
           className="w-full sm:w-auto inline-flex items-center justify-center gap-3 
-                    rounded-2xl dark:bg-white bg-[#08152F] px-8 py-4 text-sm font-bold
-                     dark:text-black text-white transition-all duration-300 
+                    rounded-2xl bg-[#406093] dark:bg-[#281C59] px-8 py-4 text-sm font-bold
+                     dark:text-white text-white transition-all duration-300 
                      hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 
                      cursor-pointer shadow-lg hover:shadow-xl dark:shadow-none"
         >

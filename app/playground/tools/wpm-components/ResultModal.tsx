@@ -20,9 +20,9 @@ export const ResultModal = () => {
       <div className="flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="flex-1 w-full text-center md:text-left">
           <h2 className="text-4xl font-black mb-2 bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            Well Done!
+            WPM Test Is Done!
           </h2>
-          <p className="text-gray-500 text-sm font-medium italic">"Every keystroke makes you faster."</p>
+          <p className="text-gray-500 text-sm font-medium italic">"Every keystroke makes you faster." Gang Gangg</p>
           
           <button 
             onClick={handleRestart}
