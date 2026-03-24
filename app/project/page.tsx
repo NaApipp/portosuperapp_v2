@@ -3,7 +3,7 @@ import Project from "./clientView"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Apps | Project",
+  title: "Project",
 };
 
 
