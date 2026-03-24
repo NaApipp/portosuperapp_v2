@@ -42,8 +42,8 @@ const items: Item[] = [
 export default function SeeProject() {
   const swiperRef = useRef<SwiperType | null>(null);
   return (
-    <div className="bg-[#08152F]" id="see_project">
-      <h1 className="text-center text-5xl font-bebas scroll-mt-30 mb-10" id="project">FEATURE PRORJECT</h1>
+    <div className="dark:bg-[#08152F] bg-[#F8FAFC] py-20" id="see_project">
+      <h1 className="text-center text-5xl font-bebas scroll-mt-30 mb-10 text-[#08152F] dark:text-zinc-100" id="project">FEATURE PROJECT</h1>
       <div
         className="w-full"
         onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
@@ -75,7 +75,7 @@ export default function SeeProject() {
 
 function Card({ item }: { item: Item }) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/40 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] md:h-max h-[400px]">
+    <div className="group relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950/40 shadow-sm dark:shadow-[0_0_0_1px_rgba(255,255,255,0.02)] md:h-max h-[400px]">
       {/* Image */}
       <div className="relative h-[200px] w-full">
         <Image
@@ -94,10 +94,10 @@ function Card({ item }: { item: Item }) {
 
       {/* Text area */}
       <div className="p-4">
-        <h3 className="text-base font-semibold text-zinc-100">{item.title}</h3>
+        <h3 className="text-base font-semibold text-[#08152F] dark:text-zinc-100">{item.title}</h3>
 
         {/* Teks detail muncul saat hover */}
-        <p className="mt-2 text-sm leading-relaxed text-zinc-300 opacity-100 md:opacity-0 translate-y-2 transition duration-300 md:group-hover:opacity-100 md:group-hover:translate-y-0">
+        <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300 opacity-100 md:opacity-0 translate-y-2 transition duration-300 md:group-hover:opacity-100 md:group-hover:translate-y-0">
           {item.desc}
         </p>
 
@@ -107,7 +107,7 @@ function Card({ item }: { item: Item }) {
       </div>
 
       {/* Border glow halus saat hover */}
-      <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent transition group-hover:ring-zinc-700/80" />
+      <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent transition group-hover:ring-zinc-300 dark:group-hover:ring-zinc-700/80" />
     </div>
   );
 }

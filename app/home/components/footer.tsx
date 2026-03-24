@@ -4,12 +4,12 @@ import React from "react";
 import { useContact } from "@/app/hooks/useContact";
 
 const inputBase =
-  "w-full rounded-2xl border border-zinc-800 bg-zinc-950/60 px-4 py-3 text-sm text-zinc-100 " +
-  "placeholder:text-zinc-500 outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20";
+  "w-full rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-[#F8FAFC] dark:bg-zinc-950/60 px-4 py-3 text-sm text-[#08152F] dark:text-zinc-100 " +
+  "placeholder:text-zinc-400 dark:placeholder:text-zinc-500 outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20";
 
 function IconWrap({ children }: { children: React.ReactNode }) {
   return (
-    <span className="grid h-10 w-10 place-items-center rounded-full border border-zinc-800 bg-zinc-950/60">
+    <span className="grid h-10 w-10 place-items-center rounded-full border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950/60 text-[#08152F] dark:text-white">
       {children}
     </span>
   );
@@ -17,7 +17,7 @@ function IconWrap({ children }: { children: React.ReactNode }) {
 
 function SectionCard({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded-3xl border border-zinc-800 bg-zinc-950/40 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
+    <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-[#F8FAFC] dark:bg-zinc-950/40 shadow-sm dark:shadow-[0_0_0_1px_rgba(255,255,255,0.02)] transition-all duration-300">
       {children}
     </div>
   );
@@ -37,14 +37,14 @@ function SocialItem({
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="group flex items-center justify-between rounded-2xl border border-zinc-800 bg-zinc-950/40 px-4 py-4 transition hover:border-zinc-700 hover:bg-zinc-950/70"
+      className="group flex items-center justify-between rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950/40 px-4 py-4 transition hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-950/70"
     >
       <div className="flex items-center gap-3">
         <IconWrap>{icon}</IconWrap>
-        <span className="text-sm font-semibold text-zinc-100">{label}</span>
+        <span className="text-sm font-semibold text-[#08152F] dark:text-zinc-100">{label}</span>
       </div>
 
-      <span className="text-zinc-500 transition group-hover:translate-x-0.5 group-hover:text-zinc-300">
+      <span className="text-zinc-400 dark:text-zinc-500 transition group-hover:translate-x-0.5 group-hover:text-zinc-600 dark:group-hover:text-zinc-300">
         →
       </span>
     </a>
@@ -69,14 +69,14 @@ export default function Footer() {
   } = useContact();
 
   return (
-    <section className="bg-[#08152F] text-white scroll-mt-20" id="contact">
+    <section className="dark:bg-[#08152F] bg-[#F8FAFC] dark:text-white text-[#08152F] scroll-mt-20" id="contact">
       {/* Form + Socmed */}
-      <div className="mx-auto max-w-6xl px-6 py-14">
+      <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-8 md:grid-cols-2">
           {/* LEFT */}
           <SectionCard>
             <div className="p-6">
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-4">
                 <IconWrap>
                   {/* chat bubble */}
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
@@ -89,15 +89,15 @@ export default function Footer() {
                     />
                   </svg>
                 </IconWrap>
-                <div>
-                  <h3 className="text-lg font-semibold">Connect With Me</h3>
-                  <p className="mt-1 text-sm text-zinc-400">
+                <div className="pt-2">
+                  <h3 className="text-lg font-bold text-[#08152F] dark:text-zinc-100 uppercase tracking-tight">Connect With Me</h3>
+                  <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
                     Find me on these platforms
                   </p>
                 </div>
               </div>
 
-              <div className="mt-6 space-y-4">
+              <div className="mt-8 space-y-4">
                 <SocialItem
                   label="GitHub"
                   href="https://github.com/NaApipp"
@@ -173,8 +173,8 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="border-t border-zinc-800 p-6">
-              <div className="flex items-start gap-3">
+            <div className="border-t border-zinc-200 dark:border-zinc-800 p-6">
+              <div className="flex items-start gap-4">
                 <IconWrap>
                   {/* mail */}
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
@@ -193,13 +193,13 @@ export default function Footer() {
                     />
                   </svg>
                 </IconWrap>
-                <div>
-                  <h4 className="text-base font-semibold">Prefer email?</h4>
-                  <p className="mt-1 text-sm text-zinc-400">
+                <div className="pt-2">
+                  <h4 className="text-base font-bold text-[#08152F] dark:text-white uppercase tracking-tight">Prefer email?</h4>
+                  <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
                     Use the form or reach out at{" "}
                     <a
                       href="mailto:nabilariftriyanto@gmail.com"
-                      className="text-zinc-200"
+                      className="text-[#08152F] dark:text-zinc-200 font-semibold"
                     >
                       nabilariftriyanto@email.com
                     </a>
@@ -212,7 +212,7 @@ export default function Footer() {
           {/* RIGHT */}
           <SectionCard>
             <div className="p-6">
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-4">
                 <IconWrap>
                   {/* paper plane */}
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
@@ -232,24 +232,24 @@ export default function Footer() {
                     />
                   </svg>
                 </IconWrap>
-                <div>
-                  <h3 className="text-lg font-semibold">Send a Message</h3>
-                  <p className="mt-1 text-sm text-zinc-400">
+                <div className="pt-2">
+                  <h3 className="text-lg font-bold text-[#08152F] dark:text-zinc-100 uppercase tracking-tight">Send a Message</h3>
+                  <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
                     I&apos;ll get back to you as soon as possible
                   </p>
                 </div>
               </div>
 
               {/* Main Form */}
-              <form className="mt-6 space-y-5" onSubmit={handleSubmit}>
+              <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                 {/* Email + Name */}
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <label
-                      className="text-sm font-semibold text-zinc-200"
+                      className="text-xs font-bold text-[#08152F] dark:text-zinc-200 uppercase tracking-widest px-1"
                       htmlFor="email"
                     >
-                      Email:{" "}
+                      Email
                     </label>
                     <input
                       type="text"
@@ -264,10 +264,10 @@ export default function Footer() {
 
                   <div className="space-y-2">
                     <label
-                      className="text-sm font-semibold text-zinc-200"
+                      className="text-xs font-bold text-[#08152F] dark:text-zinc-200 uppercase tracking-widest px-1"
                       htmlFor="name"
                     >
-                      Name:{" "}
+                      Name
                     </label>
                     <input
                       type="text"
@@ -284,10 +284,10 @@ export default function Footer() {
                 {/* Message */}
                 <div className="space-y-2">
                   <label
-                    className="text-sm font-semibold text-zinc-200"
+                    className="text-xs font-bold text-[#08152F] dark:text-zinc-200 uppercase tracking-widest px-1"
                     htmlFor="message"
                   >
-                    Message:{" "}
+                    Message
                   </label>
                   <textarea
                     name="message"
@@ -304,7 +304,7 @@ export default function Footer() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-2xl dark:bg-white bg-[#08152F] px-8 py-4 text-sm font-bold dark:text-black text-white transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 cursor-pointer shadow-lg hover:shadow-xl dark:shadow-none"
                 >
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
                     <path
@@ -380,38 +380,38 @@ export default function Footer() {
       </div>
 
       {/* Line */}
-      <div className="w-full h-px bg-[#D5DEEF] mt-[10px] mb-3"></div>
+      <div className="w-full h-px bg-[#D5DEEF] mt-[10px]"></div>
 
       {/* Copyright */}
-      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:flex-row md:items-center md:justify-between flex flex-col justify-center items-center font-poppins font-semibold">
-        <span className="text-sm text-center md:text-center">
+      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:flex-row md:items-center md:justify-between flex flex-col justify-center items-center font-poppins font-semibold border-t border-zinc-200 dark:border-zinc-800/50 ">
+        <span className="text-sm text-center md:text-center text-zinc-500 dark:text-zinc-400">
           &copy; <span>{year}</span>{" "}
           <a
             href="https://www.instagram.com/n_apipppp/"
-            className="hover:underline"
+            className="hover:underline text-[#08152F] dark:text-white"
           >
             SuperApps
           </a>
           . All Rights Reserved.
         </span>
-        <ul className="flex flex-wrap items-center justify-center mt-3 text-sm text-body sm:mt-0">
+        <ul className="flex flex-wrap items-center justify-center mt-3 text-sm text-zinc-500 dark:text-zinc-400 sm:mt-0">
           <li>
-            <a href="#footer" className="hover:underline me-4 md:me-6">
+            <a href="#footer" className="hover:underline me-4 md:me-6 hover:text-[#08152F] dark:hover:text-white">
               Home
             </a>
           </li>
           <li>
-            <a href="#education" className="hover:underline me-4 md:me-6">
+            <a href="#education" className="hover:underline me-4 md:me-6 hover:text-[#08152F] dark:hover:text-white">
               Education
             </a>
           </li>
           <li>
-            <a href="#experience" className="hover:underline me-4 md:me-6">
+            <a href="#experience" className="hover:underline me-4 md:me-6 hover:text-[#08152F] dark:hover:text-white">
               Experience
             </a>
           </li>
           <li>
-            <a href="/project" className="hover:underline">
+            <a href="/project" className="hover:underline hover:text-[#08152F] dark:hover:text-white">
               Project
             </a>
           </li>

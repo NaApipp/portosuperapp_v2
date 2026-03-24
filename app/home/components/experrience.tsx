@@ -5,11 +5,10 @@ type Experience = {
   location: string;
   dateRange: string;
   bullets: string[];
-   links?: { label: string; href: string }[];
+  links?: { label: string; href: string }[];
 };
 
 const experience: Experience[] = [
-  //   SMKN 4 Kendal
   {
     company: "Intern Quality Assurance (QA)",
     location: "PT Bullion Ecosystem International - Bogor, West Java",
@@ -34,69 +33,75 @@ const experience: Experience[] = [
   },
 ];
 
-function DashItem({ children }: { children: React.ReactNode }) {
+function DetailItem({ children }: { children: React.ReactNode }) {
   return (
-    <li className="flex gap-3">
-      <span className="select-none text-zinc-500">-</span>
-      <span className="text-zinc-300">{children}</span>
+    <li className="flex gap-4 items-start">
+      <span className="w-1.5 h-1.5 rounded-full bg-violet-500/80 mt-2 flex-shrink-0" />
+      <span className="dark:text-zinc-400 text-zinc-500 text-[15px] leading-relaxed font-normal">{children}</span>
     </li>
   );
 }
 
 export default function Experience() {
   return (
-    <section className="bg-[#08152F] scroll-mt-20 font-poppins font-semibold" id="experience">
-      <div className="mx-auto max-w-6xl px-6 py-14">
-        <div className="grid gap-10 md:grid-cols-12">
-          {/* Left label */}
-          <div className="md:col-span-3">
-            <h2 className="font-bebas text-2xl font-semibold tracking-[0.25em] text-zinc-200">
-              EXPERIENCE
-            </h2>
-          </div>
+    <section className="dark:bg-[#08152F] bg-[#F8FAFC] scroll-mt-20 py-24" id="experience">
+      <div className="mx-auto max-w-6xl px-6 font-poppins font-semibold">
+        {/* Header with line */}
+        <div className="flex items-center gap-6 mb-16 opacity-0 translate-y-10 transition-all duration-700 ease-out scroll-animate" >
+          <h2 className="font-bebas text-4xl font-semibold tracking-[0.1em] text-[#08152F] dark:text-zinc-100 uppercase">
+            EXPERIENCE
+          </h2>
+          <div className="h-[3px] flex-grow bg-zinc-400"></div>
+        </div>
 
-          {/* Right content */}
-          <div className="md:col-span-9">
-            <div className="space-y-12">
-              {experience.map((exp) => (
-                <div key={exp.company} className="space-y-2">
-                  {/* Title + date */}
-                  <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-                    <h3 className="text-lg font-semibold text-zinc-100">
-                      {exp.company}
-                    </h3>
-                    <p className="text-sm text-zinc-400 font-medium">{exp.dateRange}</p>
-                  </div>
-
-                  {/* Location */}
-                  <p className="text-sm text-sky-400">
+        {/* Timeline Container */}
+        <div className="relative  ml-3 md:ml-4 pl-8 md:pl-12 space-y-20">
+          {experience.map((exp, index) => (
+            <div key={index} className="relative group">
+              {/* Content Header */}
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+                <div className="space-y-1">
+                  <h3 className="text-2xl font-bold text-[#08152F] dark:text-zinc-100 tracking-tight">
+                    {exp.company}
+                  </h3>
+                  <p className="text-[#00BCFF] font-medium text-base tracking-wide">
                     {exp.location}
                   </p>
-
-                  {/* Bullets */}
-                  <ul className="mt-3 space-y-2 text-sm leading-relaxed">
-                    {exp.bullets.map((b, i) => (
-                      <DashItem key={i}>{b}</DashItem>
-                    ))}
-
-                    {exp.links?.map((l) => (
-                      <DashItem key={l.href}>
-                        <span className="text-zinc-300">{l.label} : </span>
-                        <a
-                          href={l.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-sky-400 underline-offset-4 hover:underline"
-                        >
-                          {l.href}
-                        </a>
-                      </DashItem>
-                    ))}
-                  </ul>
                 </div>
-              ))}
+                
+                {/* Date Badge */}
+                <div className="md:mt-1">
+                  <span className="bg-zinc-800/50 backdrop-blur-sm dark:bg-zinc-800/50 dark:backdrop-blur-sm dark:text-zinc-400 text-xs font-semibold px-4 py-1.5 rounded-full border border-zinc-700/30 whitespace-nowrap">
+                    {exp.dateRange}
+                  </span> 
+                </div>
+              </div>
+
+              {/* Description Body */}
+              <div className="max-w-4xl">
+                {/* Bullets list */}
+                <ul className="space-y-4 mt-4">
+                  {exp.bullets.map((b, i) => (
+                    <DetailItem key={i}>{b}</DetailItem>
+                  ))}
+
+                  {exp.links?.map((l) => (
+                    <DetailItem key={l.href}>
+                      <span className="dark:text-zinc-300 text-zinc-500 font-semibold">{l.label}: </span>
+                      <a
+                        href={l.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sky-400 underline-offset-4 hover:underline transition-colors font-medium"
+                      >
+                        {l.href}
+                      </a>
+                    </DetailItem>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

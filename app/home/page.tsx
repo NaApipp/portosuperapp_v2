@@ -44,7 +44,7 @@ export default function Page() {
           }}
         />
     </Head>
-      <div className="bg-[#08152F]">
+      <div className="dark:bg-[#08152F] bg-[#F8FAFC]">
         <main>
         <Hero/>
         <Education/>

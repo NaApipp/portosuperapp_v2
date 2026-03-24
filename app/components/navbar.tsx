@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Sun, Moon } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -9,7 +10,7 @@ export default function Navbar() {
   const close = () => setOpen(false);
 
   return (
-    <nav className="lg:hidden fixed inset-x-0 top-0 z-50 bg-[#102D41]">
+    <nav className="lg:hidden fixed inset-x-0 top-0 z-50 bg-[#0B192C] dark:bg-[#102D41]">
       {/* bar atas */}
       <div className="max-w-screen-xl mx-auto flex h-16 items-center justify-between px-4 relative">
         <Link href="/project" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -23,6 +24,9 @@ export default function Navbar() {
           </span>
         </Link>
 
+        <div className="flex items-center gap-4">
+          <ToggleTheme />
+        </div>
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
@@ -54,7 +58,7 @@ export default function Navbar() {
             ${open ? "block" : "hidden"}
             absolute top-16 left-0 right-0
             md:static md:block md:w-auto
-            bg-[#102D41]
+            bg-[#0B192C] dark:bg-[#102D41]
           `}
         >
           <ul className="
@@ -125,7 +129,7 @@ export default function Navbar() {
               <ul className="mt-2 space-y-1 px-4 border-l border-neutral-tertiary/50 ml-4">
                 <li>
                   <Link
-                    href="/coming-soon"
+                    href="/playground/apps-ai"
                     onClick={close}
                     className="block rounded px-4 py-2 text-sm font-medium text-heading/80 hover:bg-neutral-tertiary hover:text-heading transition-colors"
                   >
@@ -135,7 +139,7 @@ export default function Navbar() {
 
                 <li>
                   <Link
-                    href="/coming-soon"
+                    href="/playground/tools"
                     onClick={close}
                     className="block rounded px-4 py-2 text-sm font-medium text-heading/80 hover:bg-neutral-tertiary hover:text-heading transition-colors"
                   >
@@ -158,5 +162,54 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+  );
+}
+
+function ToggleTheme() {
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
+
+  useEffect(() => {
+    // Check initial theme or system preference
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.classList.toggle("dark", savedTheme === "dark");
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
+
+  const toggleTheme = (newTheme: "light" | "dark") => {
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+  };
+
+  return (
+    <div className="flex bg-[#0B1521] rounded-2xl p-1 w-full max-w-[200px] mx-auto shadow-inner">
+      <button
+        onClick={() => toggleTheme("light")}
+        className={`flex flex-1 items-center justify-center gap-2 py-2.5 px-4 rounded-xl transition-all duration-300 ${
+          theme === "light"
+            ? "bg-[#1A2E42] text-white shadow-lg"
+            : "text-gray-400 hover:text-gray-300"
+        }`}
+      >
+        <Sun size={18} className={theme === "light" ? "text-yellow-400" : ""} />
+        {/* <span className="text-sm font-medium font-inter">Light</span> */}
+      </button>
+      <button
+        onClick={() => toggleTheme("dark")}
+        className={`flex flex-1 items-center justify-center gap-2 py-2.5 px-4 rounded-xl transition-all duration-300 ${
+          theme === "dark"
+            ? "bg-[#1A2E42] text-white shadow-lg"
+            : "text-gray-400 hover:text-gray-300"
+        }`}
+      >
+        <Moon size={18} className={theme === "dark" ? "text-blue-400" : ""} />
+        {/* <span className="text-sm font-medium font-inter">Dark</span> */}
+      </button>
+    </div>
   );
 }
