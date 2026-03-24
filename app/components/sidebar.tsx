@@ -88,7 +88,7 @@ export default function Sidebar() {
           </li>
 
           <li>
-            <details className="group [&_summary::-webkit-details-marker]:hidden">
+            <details className="group [&_summary::-webkit-details-marker]:hidden" open>
               <summary className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition-colors duration-200">
                 <span className="flex items-center gap-4">
                   <Gamepad2 />
