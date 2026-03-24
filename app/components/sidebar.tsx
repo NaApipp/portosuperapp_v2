@@ -33,7 +33,7 @@ export default function Sidebar() {
           </span>
         </span>
         <Link
-          href="#contact"
+          href="/home#contact"
           className="block rounded-lg bg-white px-4 py-2 text-sm font-medium text-[#0A1B39] mt-5 flex items-center justify-between"
         >
           <span className="flex items-center gap-2 ">
