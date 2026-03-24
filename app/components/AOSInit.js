@@ -15,9 +15,9 @@ export default function AOSInit() {
     });
   }, []);
 
-//     useEffect(() => {
-//     AOS.refresh();
-//   }, [pathname]);
+    useEffect(() => {
+    AOS.refresh();
+  }, [pathname]);
 
   return null;
 }
