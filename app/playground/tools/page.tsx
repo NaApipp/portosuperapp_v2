@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import Tabs from "./tabs";
 import { Wrench } from "lucide-react";
 
-const Wpm = dynamic(() => import("./tabs/WpmTest"));
+const Wpm = dynamic(() => import("./tabs/wpm-test"));
 const Investment = dynamic(() => import("./tabs/Investment"));
 const PostalCode = dynamic(() => import("./tabs/PostalCode"));
 
