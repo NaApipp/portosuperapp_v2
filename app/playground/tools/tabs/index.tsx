@@ -16,23 +16,26 @@ export default function Tabs() {
   ];
 
   return (
-    <div style={{ display: "flex", gap: 16 }} className="bg-[#08152F]">
-      {tabs.map((tab) => (
-        <Link
-          key={tab.value}
-          href={`/playground/tools?tab=${tab.value}`}
-          style={{
-            fontWeight: activeTab === tab.value ? "bold" : "normal",
-          }}
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-3 
-                    rounded-2xl bg-[#406093] dark:bg-[#281C59] px-8 py-4 text-sm font-bold
-                     dark:text-white text-white transition-all duration-300 
-                     hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 
-                     cursor-pointer shadow-lg hover:shadow-xl dark:shadow-none"
-        >
-          <span>{tab.icon}</span> <span className="font-black">{tab.name}</span>
-        </Link>
-      ))}
+    <div className="bg-[#08152F] flex flex-col md:flex-row gap-4 w-full max-w-4xl mx-auto px-4 md:px-0 justify-center items-center">
+      {tabs.map((tab) => {
+        const isActive = activeTab === tab.value;
+        return (
+          <Link
+            key={tab.value}
+            href={`/playground/tools?tab=${tab.value}`}
+            className={`w-full md:w-auto inline-flex items-center justify-center gap-3 
+                      rounded-2xl px-8 py-4 text-sm font-bold transition-all duration-300 
+                      hover:scale-[1.02] active:scale-[0.98] cursor-pointer shadow-lg
+                      ${isActive 
+                        ? "bg-blue-600 dark:bg-blue-700 text-white shadow-blue-500/20" 
+                        : "bg-[#406093] dark:bg-[#281C59] text-gray-300 hover:text-white"
+                      }`}
+          >
+            <span className={isActive ? "text-blue-200" : "text-gray-400 group-hover:text-blue-300"}>{tab.icon}</span> 
+            <span className="font-black whitespace-nowrap">{tab.name}</span>
+          </Link>
+        );
+      })}
     </div>
   );
 }

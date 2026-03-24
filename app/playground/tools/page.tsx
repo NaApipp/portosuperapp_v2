@@ -17,7 +17,7 @@ export default async function ToolsPage({
 
   return (
     <div className="bg-[#08152F]">
-      <div className="flex flex-col gap-4 items-center justify-center pt-4">
+      <div className="flex flex-col gap-4 items-center justify-center md:pt-4 pt-20">
         <h1 className="flex items-center gap-2 text-2xl font-bold">
           {" "}
           <Wrench className="w-6 h-6" /> Tools
