@@ -125,7 +125,7 @@ export default function Navbar() {
               <ul className="mt-2 space-y-1 px-4 border-l border-neutral-tertiary/50 ml-4">
                 <li>
                   <Link
-                    href="/coming-soon"
+                    href="/playground/apps-ai"
                     onClick={close}
                     className="block rounded px-4 py-2 text-sm font-medium text-heading/80 hover:bg-neutral-tertiary hover:text-heading transition-colors"
                   >
@@ -135,7 +135,7 @@ export default function Navbar() {
 
                 <li>
                   <Link
-                    href="/coming-soon"
+                    href="/playground/tools"
                     onClick={close}
                     className="block rounded px-4 py-2 text-sm font-medium text-heading/80 hover:bg-neutral-tertiary hover:text-heading transition-colors"
                   >

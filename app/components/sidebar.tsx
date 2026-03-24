@@ -102,8 +102,8 @@ export default function Sidebar() {
               <ul className="mt-2 space-y-1 px-4 border-l border-white/10 ml-6">
                 <li>
                   <Link
-                    href="/coming-soon"
-                    className={getLinkStyle("/coming-soon")}
+                    href="/playground/apps-ai"
+                    className={getLinkStyle("/playground/apps-ai")}
                   >
                     <span className="ml-2 text-xs opacity-80 flex items-center gap-2"><BotMessageSquare /> Apps AI</span>
                   </Link>
@@ -111,8 +111,8 @@ export default function Sidebar() {
 
                 <li>
                   <Link
-                    href="/coming-soon"
-                    className={getLinkStyle("/coming-soon")}
+                    href="/playground/tools"
+                    className={getLinkStyle("/playground/tools")}
                   >
                     <span className="ml-2 text-xs opacity-80 flex items-center gap-2"><Wrench /> Tools</span>
                   </Link>
