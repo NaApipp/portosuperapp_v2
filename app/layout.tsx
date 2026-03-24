@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./components/sidebar";
-import Navbar from "./components/navbar";
+import Navbar from "./components/navbar"; 
+import "aos/dist/aos.css";
+import AOSInit from "./components/AOSInit";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -101,6 +103,7 @@ export default function RootLayout({
             <Navbar />
 
             <main className="flex-1 overflow-y-auto">
+              <AOSInit />
               {children}
             </main>
 
