@@ -27,7 +27,7 @@ export const SettingsBar = () => {
   };
 
   return (
-    <div className="flex flex-col gap-4 mb-8">
+    <div className="flex flex-col md:flex-row gap-4 mb-8 items-center">
       {/* Time Controls */}
       <div className="flex items-center gap-4 overflow-x-auto pb-2 scrollbar-none">
         <span className="text-xs font-bold text-gray-500 uppercase tracking-widest mr-2">Time</span>
@@ -46,7 +46,7 @@ export const SettingsBar = () => {
           </button>
         ))}
         
-        <div className="ml-auto flex items-center gap-2 bg-white/5 p-1 rounded-full border border-white/5">
+        <div className="hidden ml-auto md:flex items-center gap-2 bg-white/5 p-1 rounded-full border border-white/5">
           <button 
             onClick={() => handleLanguageChange('en')}
             disabled={isRunning}
@@ -67,6 +67,28 @@ export const SettingsBar = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile Setup  */}
+      <div className="md:hidden flex items-center gap-2 bg-white/5 p-1 rounded-full border border-white/5">
+          <button 
+            onClick={() => handleLanguageChange('en')}
+            disabled={isRunning}
+            className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              language === 'en' ? 'bg-white/10 text-white shadow-sm' : 'text-gray-500 hover:text-gray-300'
+            }`}
+          >
+            ENGLISH
+          </button>
+          <button 
+            onClick={() => handleLanguageChange('id')}
+            disabled={isRunning}
+            className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              language === 'id' ? 'bg-white/10 text-white shadow-sm' : 'text-gray-500 hover:text-gray-300'
+            }`}
+          >
+            INDONESIA
+          </button>
+        </div>
     </div>
   );
 };
