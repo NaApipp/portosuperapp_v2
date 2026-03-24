@@ -113,7 +113,7 @@ export default function KodePos() {
   }, [selectedVillage]);
 
   return (
-    <div className="min-h-screen py-10 px-4 flex flex-col items-center">
+    <div className="py-10 px-4 flex flex-col items-center">
       <div className="w-full max-w-2xl bg-[#0a0a0a]/40 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl p-8 space-y-8">
         <div className="space-y-2 text-center">
           <h2 className="text-3xl font-black tracking-tight text-white flex items-center justify-center gap-3 italic">

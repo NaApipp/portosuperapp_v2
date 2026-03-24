@@ -1,4 +1,5 @@
 import KodePos from "../postalcode-components/KodePos";
+import SearchAddress from "../postalcode-components/SearchAddress";
 
 export default function PostalCode() {
   return (
@@ -7,6 +8,7 @@ export default function PostalCode() {
       <KodePos />
       {/* Search By Postal Code
        */}
+      <SearchAddress />
     </div>
   )
 }
