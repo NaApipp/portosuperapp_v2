@@ -5,6 +5,7 @@ import Sidebar from "./components/sidebar";
 import Navbar from "./components/navbar"; 
 import "aos/dist/aos.css";
 import AOSInit from "./components/AOSInit";
+import ScrollAnimation from "./components/ScrollAnimation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -103,6 +104,7 @@ export default function RootLayout({
             <Navbar />
 
             <main className="flex-1 overflow-y-auto">
+              <ScrollAnimation />
               <AOSInit />
               {children}
             </main>
