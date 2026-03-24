@@ -10,7 +10,7 @@ export default function Tabs() {
   const activeTab = searchParams.get("tab") || "wpm";
 
   const tabs = [
-    { icon: <Keyboard />,name: "WPM", value: "wpm" },
+    { icon: <Keyboard />,name: "WPM Test", value: "wpm" },
     { icon: <MapPin />,name: "Postal Code", value: "postal-code" },
     { icon: <ChartCandlestick />,name: "Investment", value: "investment" },
   ];
