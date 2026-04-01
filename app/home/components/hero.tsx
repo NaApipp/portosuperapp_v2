@@ -57,7 +57,7 @@ export default function Hero() {
             </Link>
           </div>
           <div
-            className="dark:bg-[#102D41]/30 bg-[#d4d4d4] p-5 rounded-2xl shadow-2xl"
+            className="dark:bg-[#102D41]/30 bg-[#d4d4d4] p-5 rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300 ease-in"
             // data-aos="fade-down"
             // data-aos-duration="1000"
           >
