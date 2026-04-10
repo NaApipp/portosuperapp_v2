@@ -146,6 +146,26 @@ export const projectData: ProjectData[] = [
       },
     ],
   },
+  // Project Parking Logic
+  {
+    id: "8",
+    project_type: "Website Development",
+    image: "/asset/image/project-image/parking_logic_cover.png",
+    project_name: "ParkingLogic",
+    project_desc:
+      "ParkingLogic is a web application designed to manage parking systems in a structured and efficient way. It supports multi-role users, allowing each user to have access permissions based on their role.",
+    tech_stack: "Next.JS, TailwindCSS, PostgreSQL",
+    links: [
+      {
+        label: "Demo",
+        href: "https://parkinglogic.vercel.app/",
+      },
+      {
+        label: "Github",
+        href: "https://github.com/NaApipp/parking_manegement_system",
+      },
+    ],
+  },
 ];
 
 export const filterProjectsByType = (type: ProjectType | "all") => {
