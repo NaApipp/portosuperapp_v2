@@ -3,8 +3,16 @@
 import { TypeAnimation } from "react-type-animation";
 import { Github, Linkedin, Instagram } from "lucide-react";
 import Link from "next/link";
+import { motion as m, useInView } from "framer-motion";
+import React from "react";
 
-export default function Hero() {
+export default function Hero({
+  text = "Full-stack Web Developer proficient in React, Next.js, and TypeScript. Focused on developing innovative solutions with cutting-edge technologies to deliver responsive, secure, and user-centric digital platforms.",
+}: {
+  text?: string;
+}) {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <>
       <div
@@ -28,16 +36,15 @@ export default function Hero() {
               repeat={Infinity}
             />
           </h1>
-          <h2
+          <m.p
+            ref={ref}
+            initial={{ opacity: 0, x: -18 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="font-poppins font-semibold md:text-[1rem] text-[13px] text-[#0F172A] dark:text-white"
-            data-aos="fade-down"
-            data-aos-duration="1000"
           >
-            Full-stack Web Developer proficient in React, Next.js, and
-            TypeScript. Focused on developing innovative solutions with
-            cutting-edge technologies to deliver responsive, secure, and
-            user-centric digital platforms.
-          </h2>
+            {text}
+          </m.p>
           <div
             className="flex items-center gap-2"
             data-aos="fade-right"
@@ -56,10 +63,12 @@ export default function Hero() {
               <Instagram className="hover:text-gray-500 dark:text-white text-black cursor-pointer transition-colors duration-300 border border-2 border-gray-600 p-3 rounded-2xl w-12 h-auto" />
             </Link>
           </div>
-          <div
+          {/* Card About */}
+          <m.div
             className="dark:bg-[#102D41]/30 bg-[#d4d4d4] p-5 rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300 ease-in"
-            // data-aos="fade-down"
-            // data-aos-duration="1000"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeIn" }}
           >
             <div className="flex items-center gap-2">
               <div className="border dark:border-white border-black w-7"></div>
@@ -77,17 +86,18 @@ export default function Hero() {
               that deliver real value to users. My focus is on clean
               architecture, performance, and creating seamless user experiences.
             </p>
-          </div>
+          </m.div>
         </div>
         {/* Container 2 */}
         <div className="flex items-center justify-center md:w-1/2">
           {/* Personal Image */}
-          <img
-            src="asset\image\personal\personal_photo.jpg"
+          <m.img
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            src="/asset/image/personal/personal_photo.jpg"
             alt="Image Profile"
             className="md:w-auto md:h-[500px] rounded-2xl border border-white shadow-black shadow-2xl"
-            data-aos="zoom-in"
-            data-aos-duration="1000"
           />
         </div>
       </div>
