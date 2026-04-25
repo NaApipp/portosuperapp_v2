@@ -1,16 +1,19 @@
+"use client";
+
 import ContributionGraph from "./ContributionGraph";
 import StatCard from "./statCard";
 import GitHubStatsCard from "./GitHubStatsCard";
-import {
-  getGitHubContributions,
-  getGitHubRepos,
-  getGitHubStats,
-} from "@/app/lib/github";
+import { motion as m } from "framer-motion";
 
-export default async function GitHubStats() {
-  const stats = await getGitHubStats();
-  const repos = await getGitHubRepos();
-  const contributions = await getGitHubContributions();
+export default function GitHubStats({ 
+  stats, 
+  repos, 
+  contributions 
+}: { 
+  stats: any; 
+  repos: any[]; 
+  contributions: any; 
+}) {
 
   const totalStars = repos.reduce(
     (acc: number, repo: any) => acc + repo.stargazers_count,
@@ -55,7 +58,11 @@ export default async function GitHubStats() {
       <ContributionGraph weeks={contributions.weeks} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4 mt-6 mb-20">
-        <div
+        {/* Status Repositories In Github */}
+        <m.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeIn", delay: 0.2 }}
           className="transition-transform duration-300 ease-in-out
             hover:scale-105"
         >
@@ -65,9 +72,14 @@ export default async function GitHubStats() {
             subtitle="Public repositories"
             color="#8b5cf6"
           />
-        </div>
+        </m.div>
 
-        <div className="transition-transform duration-300 ease-in-out
+        {/* Status Stars In Github */}
+        <m.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, ease: "easeIn", delay: 0.5 }}
+        className="transition-transform duration-300 ease-in-out
             hover:scale-105">
           <StatCard
           title="Stars"
@@ -75,9 +87,14 @@ export default async function GitHubStats() {
           subtitle="Received on projects"
           color="#facc15"
         />
-        </div>
+        </m.div>
 
-        <div className="transition-transform duration-300 ease-in-out
+        {/* Satus Followers In Github */}
+        <m.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, ease: "easeIn", delay: 0.7 }}
+        className="transition-transform duration-300 ease-in-out
             hover:scale-105">
           <StatCard
           title="Followers"
@@ -85,7 +102,7 @@ export default async function GitHubStats() {
           subtitle="GitHub followers"
           color="#3b82f6"
         />
-        </div>
+        </m.div>
       </div>
 
       <GitHubStatsCard 

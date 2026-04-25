@@ -2,12 +2,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ProjectData } from "@/app/lib/projectData"; // function ProjectData
+import { motion as m } from "framer-motion";
 
 export default function projectCard({ project }: { project: ProjectData }) {
 
   return (
     <>
-      <article className="flex flex-col h-full overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-700 text-[#08152F] dark:text-white bg-white dark:bg-[#2383AD]/40 shadow-sm transition-all duration-500 ease-out hover:scale-[1.03] hover:shadow-xl dark:hover:shadow-none">
+      <m.article
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1, ease: "easeIn", delay: 0.5 }}
+      className="flex flex-col h-full overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-700 text-[#08152F] dark:text-white bg-white dark:bg-[#2383AD]/40 shadow-sm transition-all duration-500 ease-out hover:scale-[1.03] hover:shadow-xl dark:hover:shadow-none">
         <div className="relative aspect-video w-full bg-neutral-100 shrink-0">
           <Image
             src={project.image}
@@ -59,7 +64,7 @@ export default function projectCard({ project }: { project: ProjectData }) {
             </div>
           ) : null}
         </div>
-      </article>
+      </m.article>
     </>
   );
 }
