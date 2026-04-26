@@ -91,7 +91,7 @@ export const projectData: ProjectData[] = [
     image: "/asset/image/project-image/rpl-site-cover.png",
     project_name: "MASTERJAVA Project",
     project_desc:
-      "This project website is a duplicate of the 'Re-Design official website' project from my own school, SMK Negeri 4 Kendal. The difference is that in this project I used WordPress technology for time efficiency.",
+      "The official profile website for the Software Engineering class at SMKN 4 Kendal. This platform is designed to showcase our class identity, organizational structure, achievements, and activity gallery with a modern and interactive interface.",
     tech_stack: "Next.JS, TailwindCSS, MongoDB",
     links: [
       {
@@ -164,6 +164,26 @@ export const projectData: ProjectData[] = [
         label: "Github",
         href: "https://github.com/NaApipp/parking_manegement_system",
       },
+    ],
+  },
+  // Project MyFinanceKu
+  {
+    id: "9",
+    project_type: "Website Development",
+    image: "/asset/image/project-image/myfinanceku-cover.png",
+    project_name: "MyFinanceKu",
+    project_desc:
+      "MyFinanceKu is a web application designed to manage personal finances in a structured and efficient way. It supports multi-role users, allowing each user to have access permissions based on their role.",
+    tech_stack: "Next.JS, TailwindCSS, MongoDB",
+    links: [
+      {
+        label: "Demo",
+        href: "https://myfinanceku.vercel.app/",
+      },
+      // {
+      //   label: "Github",
+      //   href: "https://github.com/NaApipp/myfinanceku",
+      // },
     ],
   },
 ];
