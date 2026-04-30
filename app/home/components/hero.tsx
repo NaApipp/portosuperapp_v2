@@ -20,7 +20,7 @@ export default function Hero({
         id="home"
       >
         {/* Container 1 */}
-        <div className="flex flex-col gap-4 md:gap-8 justify-center md:w-1/2">
+        <div className="flex flex-col gap-4 md:gap-8 justify-center md:mt-0 mt-40 md:w-1/2">
           <p
             className="md:text-4xl text-2xl font-poppins font-semibold text-[#0F172A] dark:text-white"
             data-aos="fade-down"
@@ -89,7 +89,7 @@ export default function Hero({
           </m.div>
         </div>
         {/* Container 2 */}
-        <div className="flex items-center justify-center md:w-1/2">
+        <div className="hidden md:flex items-center justify-center md:w-1/2">
           {/* Personal Image */}
           <m.img
             initial={{ opacity: 0, x: 50 }}
