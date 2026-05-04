@@ -5,6 +5,7 @@ import GithubStatus from "./components/GithubStats_Component/gitStatus";
 import SeeProject from "./components/SeeProject";
 import Footer from "./components/footer";
 import { getGitHubContributions, getGitHubRepos, getGitHubStats } from "@/app/lib/github";
+import TypingDataUi from "./components/TypingDataUi";
 
 export default async function ClientView() {
   const [stats, repos, contributions] = await Promise.all([
@@ -20,6 +21,7 @@ export default async function ClientView() {
         <Hero/>
         <Education/>
         <Experience/>
+        <TypingDataUi />
         <GithubStatus 
           stats={stats} 
           repos={repos} 
