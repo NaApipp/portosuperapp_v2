@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { PersonalBest } from "../../types/monkeytype";
+import { motion, Variants } from "framer-motion";
+import { PersonalBest, MonkeyTypeStats } from "../../types/monkeytype";
 
 function formatTime(seconds: number): string {
   const hours = Math.floor(seconds / 3600);
@@ -10,7 +10,7 @@ function formatTime(seconds: number): string {
   return `${minutes}m`;
 }
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -20,7 +20,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
@@ -77,7 +77,7 @@ function StatCard({
 }
 
 interface MonkeyTypeClientProps {
-  data: any;
+  data: MonkeyTypeStats;
   pbs: {
     pb15: PersonalBest | null;
     pb30: PersonalBest | null;
