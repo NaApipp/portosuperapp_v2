@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     siteName: "AppsPorto",
     images: [
       {
-        url: "/asset/og-image/og-Image.png", // Gambar preview
+        url: "https://appsporto.vercel.app/asset/og-image/og-Image.png", // Gambar preview
         width: 1200,
         height: 630,
         alt: "Preview Image",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     card: "summary_large_image", // tipe card
     title: "AppsPorto",
     description: "Portofolio Site By Nabil Arif",
-    images: ["/asset/og-image/og-Image.png"],
+    images: ["https://appsporto.vercel.app/asset/og-image/og-Image.png"],
     creator: "@n_apipppp",
   },
 
