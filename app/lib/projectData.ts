@@ -186,6 +186,26 @@ export const projectData: ProjectData[] = [
       // },
     ],
   },
+  // Project Cuanlytics
+  {
+    id: "10",
+    project_type: "Website Development",
+    image: "/asset/image/project-image/not-found-image.png",
+    project_name: "Annotation Tools",
+    project_desc:
+      "A web application for showcasing products and providing reviews in a simple, secure and modern way.",
+    tech_stack: "Next.JS, TailwindCSS, MongoDB",
+    links: [
+      // {
+      //   label: "Demo",
+      //   href: "https://myfinanceku.vercel.app/",
+      // },
+      {
+        label: "Github",
+        href: "https://github.com/NaApipp/review_app",
+      },
+    ],
+  },
 ];
 
 export const filterProjectsByType = (type: ProjectType | "all") => {
