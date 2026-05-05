@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./components/sidebar";
-import Navbar from "./components/navbar"; 
+import Navbar from "./components/navbar";
 import "aos/dist/aos.css";
 import AOSInit from "./components/AOSInit";
 import ScrollAnimation from "./components/ScrollAnimation";
@@ -58,28 +58,29 @@ export const metadata: Metadata = {
 
   // ✅ Open Graph — lengkap
   openGraph: {
-    title: "AppsPorto",
-    description: "AppsPorto adalah Portfolio Nabil Arif",
-    url: "https://appsporto.vercel.app",
+    title: "AppsPorto", // Judul saat di-share
+    description: "Portofolio Site By Nabil Arif", // Deskripsi saat di-share
+    url: "https://appsporto.vercel.app", // URL utama
     siteName: "AppsPorto",
-    locale: "id_ID", // 🆕 locale Indonesia
-    type: "website", // 🆕 type konten
     images: [
       {
-        url: "/asset/image/logo/logo_apip_white.png",
+        url: "https://appsporto.vercel.app/asset/og-image/og-Image.png", // Gambar preview
         width: 1200,
         height: 630,
-        alt: "AppsPorto — Portfolio Nabil Arif",
+        alt: "Preview Image",
       },
     ],
+    locale: "id_ID", // Bahasa / region
+    type: "website",
   },
 
-  // 🆕 Twitter / X Card — sebelumnya tidak ada sama sekali
+  // Twitter Card (untuk share ke Twitter/X)
   twitter: {
-    card: "summary_large_image",
+    card: "summary_large_image", // tipe card
     title: "AppsPorto",
-    description: "AppsPorto adalah Portfolio Nabil Arif.",
-    images: ["/asset/image/logo/logo_apip_white.png"],
+    description: "Portofolio Site By Nabil Arif",
+    images: ["https://appsporto.vercel.app/asset/og-image/og-Image.png"],
+    creator: "@n_apipppp",
   },
 
   // 🆕 Category
@@ -99,7 +100,6 @@ export default function RootLayout({
         <div className="flex h-screen bg-gray-50/50 dark:bg-[#08152F]">
           <Sidebar />
           <div className="flex flex-col flex-1 overflow-hidden">
-            
             {/* Navbar hanya mobile & tablet */}
             <Navbar />
 
@@ -108,7 +108,6 @@ export default function RootLayout({
               <AOSInit />
               {children}
             </main>
-
           </div>
         </div>
       </body>
