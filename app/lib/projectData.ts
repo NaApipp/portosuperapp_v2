@@ -1,4 +1,4 @@
-export type ProjectType = "Website Development" | "UI/UX Design" | "Wordpress";
+export type ProjectType = "Website Development" | "UI/UX Design" | "Wordpress" | "QA Project";
 
 export type ProjectData = {
   id?: string;
@@ -203,6 +203,38 @@ export const projectData: ProjectData[] = [
       {
         label: "Github",
         href: "https://github.com/NaApipp/review_app",
+      },
+    ],
+  },
+  // Project Web Registrasi KYC
+  {
+    id: "11",
+    project_type: "QA Project",
+    image: "/asset/image/project-image/webreg-cover.png",
+    project_name: "Web Registrasi KYC",
+    project_desc:
+      "KYC registration provides access to trade securely on the JFXGoldX exchange, the first digital platform for buying and selling physical gold in Indonesia.",
+    tech_stack: "VueJs, TailwindCSS, ExpressJs, MongoDB",
+    links: [
+      {
+        label: "Demo",
+        href: "https://webreg.abicommodity.co.id/login",
+      },
+    ],
+  },
+  // Project Web Registrasi Dashboard
+  {
+    id: "12",
+    project_type: "QA Project",
+    image: "/asset/image/project-image/not-found-image.png",
+    project_name: "Web Registrasi Dashboard",
+    project_desc:
+      "An administrative dashboard for managing and verifying user KYC data, providing real-time monitoring and streamlined registration approval workflows for the JFXGoldX ecosystem.",
+    tech_stack: "VueJs, TailwindCSS, ExpressJs, MongoDB",
+    links: [
+      {
+        label: "Demo",
+        href: "https://dashboard.abicommodity.co.id/login",
       },
     ],
   },
