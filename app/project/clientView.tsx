@@ -18,6 +18,7 @@ const FILTERS: { label: string; value: FilterType }[] = [
   { label: "Web Application", value: "Website Development" },
   { label: "UI/UX Design", value: "UI/UX Design" },
   { label: "Wordpress", value: "Wordpress" },
+  { label: "QA Project", value: "QA Project" },
 ];
 
 export default function Project() {

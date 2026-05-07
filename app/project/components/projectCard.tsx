@@ -18,9 +18,12 @@ export default function projectCard({ project }: { project: ProjectData }) {
             src={project.image}
             alt={project.project_name}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-700 group-hover:scale-110"
             sizes="(max-width: 768px) 100vw, 420px"
           />
+          <p className="text-[10px] uppercase tracking-widest font-bold text-zinc-700 dark:text-zinc-200 absolute bottom-4 right-4 bg-white/80 dark:bg-[#0F172A]/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-zinc-200/50 dark:border-white/10 shadow-sm z-10">
+            {project.project_type}
+          </p>
         </div>
 
         <div className="p-6 flex flex-col flex-1">
@@ -33,37 +36,37 @@ export default function projectCard({ project }: { project: ProjectData }) {
              <p className="text-sm leading-relaxed font-bold text-zinc-700 dark:text-zinc-200">
                 Tech Stack: <span className="font-medium text-zinc-500 dark:text-zinc-400">{project.tech_stack}</span>
              </p>
-          </div>
-
-
-          {project.links?.length ? (
-            <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
-              {project.links.map((l) => {
-                const isExternal = /^https?:\/\//.test(l.href);
-                // Button Link
-                return isExternal ? (
-                  <a
-                    key={`${project.id}-${l.label}`}
-                    href={l.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center rounded-xl px-6 py-2.5 font-poppins font-semibold text-sm bg-[#2383AD] text-white transition-all duration-300 hover:bg-sky-700 dark:hover:bg-sky-950 hover:shadow-lg active:scale-95"
-                  >
-                    {l.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={`${project.id}-${l.label}`}
-                    href={l.href}
-                    className="inline-flex items-center justify-center rounded-xl px-6 py-2.5 font-poppins font-semibold text-sm bg-zinc-100 dark:bg-white/10 text-[#08152F] dark:text-white transition-all duration-300 hover:bg-zinc-200 dark:hover:bg-white/20"
-                  >
-                    {l.label}
-                  </Link>
-                );
-              })}
             </div>
-          ) : null}
-        </div>
+
+
+            {project.links?.length ? (
+            <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
+                {project.links.map((l) => {
+                  const isExternal = /^https?:\/\//.test(l.href);
+                // Button Link
+                  return isExternal ? (
+                    <a
+                      key={`${project.id}-${l.label}`}
+                      href={l.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    className="inline-flex items-center justify-center rounded-xl px-6 py-2.5 font-poppins font-semibold text-sm bg-[#2383AD] text-white transition-all duration-300 hover:bg-sky-700 dark:hover:bg-sky-950 hover:shadow-lg active:scale-95"
+                    >
+                      {l.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={`${project.id}-${l.label}`}
+                      href={l.href}
+                    className="inline-flex items-center justify-center rounded-xl px-6 py-2.5 font-poppins font-semibold text-sm bg-zinc-100 dark:bg-white/10 text-[#08152F] dark:text-white transition-all duration-300 hover:bg-zinc-200 dark:hover:bg-white/20"
+                    >
+                      {l.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            ) : null}
+          </div>
       </m.article>
     </>
   );
