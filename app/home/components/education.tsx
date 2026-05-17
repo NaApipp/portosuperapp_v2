@@ -16,7 +16,7 @@ const educationData: Education[] = [
   {
     scholl_name: "SMKN 4 Kendal",
     location: "Kendal, Central Java",
-    dateRange: "Jan 2024 - Present",
+    dateRange: "Jan 2024 - April 2026",
     desc: "High School - RPL (Rekayasa Perangkat Lunak)",
     details: [
       "Focused on the fundamentals of software engineering",
