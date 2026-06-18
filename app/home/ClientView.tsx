@@ -2,6 +2,7 @@ import Hero from "./components/hero";
 import Education from "./components/education";
 import Experience from "./components/experrience";
 import GithubStatus from "./components/GithubStats_Component/gitStatus";
+import TechStack from "./components/TechStack";
 import SeeProject from "./components/SeeProject";
 import Footer from "./components/footer";
 import { getGitHubContributions, getGitHubRepos, getGitHubStats } from "@/app/lib/github";
@@ -21,6 +22,7 @@ export default async function ClientView() {
         <Hero/>
         <Education/>
         <Experience/>
+        <TechStack/>
         <TypingDataUi />
         <GithubStatus 
           stats={stats} 
