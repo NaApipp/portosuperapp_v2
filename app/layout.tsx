@@ -98,10 +98,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="flex h-screen bg-gray-50/50 dark:bg-[#08152F]">
-          {/* <Sidebar /> */}
+          <Sidebar />
           <div className="flex flex-col flex-1 overflow-hidden">
             {/* Navbar hanya mobile & tablet */}
-            {/* <Navbar /> */}
+            <Navbar />
 
             <main className="flex-1 overflow-y-auto">
               <ScrollAnimation />

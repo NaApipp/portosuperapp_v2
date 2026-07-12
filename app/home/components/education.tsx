@@ -24,6 +24,19 @@ const educationData: Education[] = [
       "Database management"
     ]
   },
+  //   SMKN 4 Kendal
+  {
+    scholl_name: "UDINUS University",
+    location: "Semarang, Central Java",
+    dateRange: "Aug 2026 - Now",
+    desc: "Bachelor of Information Technology",
+    details: [
+      "Currently Studying",
+      "Major in Software Engineering",
+      "Focus on applied software engineering",
+      "Advanced programming and system development"
+    ]
+  },
 ];
 
 function DetailItem({ children }: { children: React.ReactNode }) {
