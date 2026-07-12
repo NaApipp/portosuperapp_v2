@@ -1,4 +1,8 @@
-export type ProjectType = "Website Development" | "UI/UX Design" | "Wordpress" | "QA Project";
+export type ProjectType =
+  | "Website Development"
+  | "UI/UX Design"
+  | "Wordpress"
+  | "QA Project";
 
 export type ProjectData = {
   id?: string;
@@ -7,7 +11,7 @@ export type ProjectData = {
   project_desc: string;
   tech_stack?: string;
   project_type: ProjectType;
-  links: {icon?:string; label: string; href: string }[];
+  links: { icon?: string; label: string; href: string }[];
 };
 
 export const projectData: ProjectData[] = [
@@ -235,6 +239,22 @@ export const projectData: ProjectData[] = [
       {
         label: "Demo",
         href: "https://dashboard.abicommodity.co.id/login",
+      },
+    ],
+  },
+  // Project GTM Gold To Mecca
+  {
+    id: "13",
+    project_type: "QA Project",
+    image: "/asset/image/project-image/gtm_project.png",
+    project_name: "GTM (Gold To Mecca)",
+    project_desc:
+      "A feature on Nunomics that allows users to save for Umrah or Hajj through incremental digital gold investments, with goal setting and real-time progress tracking.",
+    tech_stack: "ExpressJS, VueJs, MongoDB",
+    links: [
+      {
+        label: "PlayStore",
+        href: "https://play.google.com/store/apps/details?id=com.nunomics.app&pcampaignid=web_share",
       },
     ],
   },
