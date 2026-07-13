@@ -29,7 +29,7 @@ const educationData: Education[] = [
     scholl_name: "UDINUS University",
     location: "Semarang, Central Java",
     dateRange: "Aug 2026 - Now",
-    desc: "Bachelor of Information Technology",
+    desc: "Bachelor of Computer Science",
     details: [
       "Currently Studying",
       "Major in Software Engineering",
