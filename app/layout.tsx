@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | AppsPorto",
   },
   description:
-    "AppsPorto adalah platform sistem manajemen parkir yang modern, efisien, dan mudah digunakan.",
+    "Freelance Web Developer & QA Engineer. Specializing in high-quality web development and precise system testing. Explore Nabil Arif's portfolio.",
   applicationName: "AppsPorto",
   authors: [{ name: "Nabil Arif", url: "https://appsporto.my.id" }],
 
@@ -59,7 +59,8 @@ export const metadata: Metadata = {
   // ✅ Open Graph — lengkap
   openGraph: {
     title: "AppsPorto", // Judul saat di-share
-    description: "Portofolio Site By Nabil Arif", // Deskripsi saat di-share
+    description:
+      "Official portfolio of Nabil Arif. Freelance Web Developer and QA Engineer dedicated to building flawless digital experiences.", // Deskripsi saat di-share
     url: "https://appsporto.my.id", // URL utama
     siteName: "AppsPorto",
     images: [
@@ -78,7 +79,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image", // tipe card
     title: "AppsPorto",
-    description: "Portofolio Site By Nabil Arif",
+    description:
+      "Official portfolio of Nabil Arif. Freelance Web Developer and QA Engineer dedicated to building flawless digital experiences.",
     images: ["https://appsporto.my.id/asset/og-image/og-Image.png"],
     creator: "@n_apipppp",
   },
