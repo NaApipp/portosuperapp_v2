@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "AppsPorto adalah platform sistem manajemen parkir yang modern, efisien, dan mudah digunakan.",
   applicationName: "AppsPorto",
-  authors: [{ name: "Nabil Arif", url: "https://appsporto.vercel.app" }],
+  authors: [{ name: "Nabil Arif", url: "https://appsporto.my.id" }],
 
   // ✅ Robots — izinkan semua crawler
   robots: {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
   // ✅ Canonical URL — penting untuk SEO
   alternates: {
-    canonical: "https://appsporto.vercel.app",
+    canonical: "https://appsporto.my.id",
   },
 
   // ✅ Icons / Favicon
@@ -54,17 +54,17 @@ export const metadata: Metadata = {
   },
 
   // ✅ Metadata base
-  metadataBase: new URL("https://appsporto.vercel.app"),
+  metadataBase: new URL("https://appsporto.my.id"),
 
   // ✅ Open Graph — lengkap
   openGraph: {
     title: "AppsPorto", // Judul saat di-share
     description: "Portofolio Site By Nabil Arif", // Deskripsi saat di-share
-    url: "https://appsporto.vercel.app", // URL utama
+    url: "https://appsporto.my.id", // URL utama
     siteName: "AppsPorto",
     images: [
       {
-        url: "https://appsporto.vercel.app/asset/og-image/og-Image.png", // Gambar preview
+        url: "https://appsporto.my.id/asset/og-image/og-Image.png", // Gambar preview
         width: 1200,
         height: 630,
         alt: "Preview Image",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     card: "summary_large_image", // tipe card
     title: "AppsPorto",
     description: "Portofolio Site By Nabil Arif",
-    images: ["https://appsporto.vercel.app/asset/og-image/og-Image.png"],
+    images: ["https://appsporto.my.id/asset/og-image/og-Image.png"],
     creator: "@n_apipppp",
   },
 
