@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
 import clientPromise from "@/app/lib/mongodb";
+import {Resend} from "resend";
+
+// GET API KEY in env
+const resend = new Resend(process.env.RESEND_API_KEY);  
 
 // Format date to "DD/MM/YYYY HH:MM:SS"  For Message Date
 function formatDateWIB(date: Date) {
@@ -24,7 +28,25 @@ function formatDateWIB(date: Date) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { email, name, message } = body;
+    const { email, name, message} = body;
+
+    const data = await resend.emails.send({
+      from: "appsporto <onboarding@resend.dev>",
+      to: "nabilapipp2@gmail.com",
+      subject: `Pesan baru dari ${name}`,
+      html: `
+        <h2 style="color: black; margin: 0 auto; padding-bottom: 10px; ">Anda mendapat pesan baru dari website Appsporto</h2>
+        <p style="border: 2px solid black; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px; ">
+          <strong>Dari:</strong> ${name}
+        </p>
+        <p style="border: 2px solid black; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px; ">
+          <strong>Email:</strong> ${email}
+        </p>
+        <p style="border: 2px solid black; padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px; ">
+          <strong>Pesan:</strong> ${message}
+        </p>
+      `
+    })
 
     const client = await clientPromise;
     const db = client.db("porto-apip");
@@ -43,6 +65,7 @@ export async function POST(request: Request) {
       {
         success: true,
         id: result.insertedId,
+        data: data
       },
       { status: 200 }
     );

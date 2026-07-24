@@ -115,7 +115,7 @@ export default function MonkeyTypeClient({ data, pbs, bestOverall }: MonkeyTypeC
           </div>
         </div>
         <a
-          href="https://monkeytype.com"
+          href="https://monkeytype.com/profile/NabilApps"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative px-5 py-2.5 rounded-2xl overflow-hidden transition-all"
