@@ -9,6 +9,8 @@ export type ProjectData = {
   image: string;
   project_name: string;
   project_desc: string;
+  target_user: string;
+  problem_solution: string;
   tech_stack?: string;
   project_type: ProjectType;
   links: { icon?: string; label: string; href: string }[];
@@ -23,6 +25,8 @@ export const projectData: ProjectData[] = [
     project_name: "GreenCode Web",
     project_desc:
       "A web application for managing B3 (hazardous and toxic) waste, designed with a responsive and attractive user interface. This platform helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
+    target_user: "Users who want to manage B3 (hazardous and toxic) waste.",
+    problem_solution: "GreenCode helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
     tech_stack: "HTML, CSS, JS (Native)",
     links: [
       {
@@ -41,6 +45,8 @@ export const projectData: ProjectData[] = [
     project_name: "UI Design Rent Car",
     project_desc:
       "I designed an application for Car Rental. This design helps to rent vehicles more efficiently and practically. The design is responsive, intuitive, and attractive, making it easy to use on various devices.",
+    target_user: "Users who want to rent vehicles.",
+    problem_solution: "GreenCode helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
     tech_stack: "-",
     links: [
       {
@@ -58,6 +64,8 @@ export const projectData: ProjectData[] = [
     project_name: "CoffeeShop Web Template",
     project_desc:
       "I provide a web application template for Coffee Shops. This website features menu viewing and ordering capabilities. The design is responsive and attractive, making it comfortable to use on various devices.",
+    target_user: "Users who want to order coffee.",
+    problem_solution: "GreenCode helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
     tech_stack: "PHP Native",
     links: [
       {
@@ -79,6 +87,8 @@ export const projectData: ProjectData[] = [
     project_name: "School Profile",
     project_desc:
       "This project website is a duplicate of the 'Re-Design official website' project from my own school, SMK Negeri 4 Kendal. The difference is that in this project I used WordPress technology for time efficiency.",
+    target_user: "Users who want to rent vehicles.",
+    problem_solution: "GreenCode helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
     tech_stack: "Elementor Pro",
     links: [
       {
@@ -96,6 +106,8 @@ export const projectData: ProjectData[] = [
     project_name: "MASTERJAVA Project",
     project_desc:
       "The official profile website for the Software Engineering class at SMKN 4 Kendal. This platform is designed to showcase our class identity, organizational structure, achievements, and activity gallery with a modern and interactive interface.",
+    target_user: "Users who want to rent vehicles.",
+    problem_solution: "GreenCode helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
     tech_stack: "Next.JS, TailwindCSS, MongoDB",
     links: [
       {
@@ -113,6 +125,8 @@ export const projectData: ProjectData[] = [
     project_name: "GreenCode Web V3",
     project_desc:
       "The system includes new AI-powered support features and a comprehensive dashboard for complaint management.",
+    target_user: "Users who want to rent vehicles.",
+    problem_solution: "GreenCode helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
     tech_stack: "Next.JS, TailwindCSS, MongoDB",
     links: [
       {
@@ -138,6 +152,8 @@ export const projectData: ProjectData[] = [
     project_name: "UMKM Profile WEB",
     project_desc:
       "This project website aims to help UMKM entrepreneurs who want to reach customers from outside their region. I used WordPress for this project to save time.",
+    target_user: "Users who want to rent vehicles.",
+    problem_solution: "GreenCode helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
     tech_stack: "Elementor Pro",
     links: [
       {
@@ -158,6 +174,8 @@ export const projectData: ProjectData[] = [
     project_name: "ParkingLogic",
     project_desc:
       "ParkingLogic is a web application designed to manage parking systems in a structured and efficient way. It supports multi-role users, allowing each user to have access permissions based on their role.",
+    target_user: "Users who want to rent vehicles.",
+    problem_solution: "GreenCode helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
     tech_stack: "Next.JS, TailwindCSS, PostgreSQL",
     links: [
       {
@@ -178,6 +196,8 @@ export const projectData: ProjectData[] = [
     project_name: "MyFinanceKu",
     project_desc:
       "MyFinanceKu is a web application designed to manage personal finances in a structured and efficient way. It supports multi-role users, allowing each user to have access permissions based on their role.",
+    target_user: "Users who want to rent vehicles.",
+    problem_solution: "GreenCode helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
     tech_stack: "Next.JS, TailwindCSS, MongoDB",
     links: [
       {
@@ -198,6 +218,8 @@ export const projectData: ProjectData[] = [
     project_name: "Annotation Tools",
     project_desc:
       "A web application for showcasing products and providing reviews in a simple, secure and modern way.",
+    target_user: "Users who want to rent vehicles.",
+    problem_solution: "GreenCode helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
     tech_stack: "Next.JS, TailwindCSS, MongoDB",
     links: [
       // {
@@ -218,6 +240,8 @@ export const projectData: ProjectData[] = [
     project_name: "Web Registrasi KYC",
     project_desc:
       "KYC registration provides access to trade securely on the JFXGoldX exchange, the first digital platform for buying and selling physical gold in Indonesia.",
+    target_user: "Users who want to rent vehicles.",
+    problem_solution: "GreenCode helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
     tech_stack: "VueJs, TailwindCSS, ExpressJs, MongoDB",
     links: [
       {
@@ -234,6 +258,8 @@ export const projectData: ProjectData[] = [
     project_name: "Web Registrasi Dashboard",
     project_desc:
       "An administrative dashboard for managing and verifying user KYC data, providing real-time monitoring and streamlined registration approval workflows for the JFXGoldX ecosystem.",
+    target_user: "Users who want to rent vehicles.",
+    problem_solution: "GreenCode helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
     tech_stack: "VueJs, TailwindCSS, ExpressJs, MongoDB",
     links: [
       {
@@ -250,6 +276,8 @@ export const projectData: ProjectData[] = [
     project_name: "GTM (Gold To Mecca)",
     project_desc:
       "A feature on Nunomics that allows users to save for Umrah or Hajj through incremental digital gold investments, with goal setting and real-time progress tracking.",
+    target_user: "Users who want to rent vehicles.",
+    problem_solution: "GreenCode helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
     tech_stack: "ExpressJS, VueJs, MongoDB",
     links: [
       {
