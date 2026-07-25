@@ -57,38 +57,12 @@ export default function projectCard({ project }: { project: ProjectData }) {
           <m.button
             onClick={() => setIsOpen(!isOpen)}
             whileTap={{ scale: 0.95 }}
-            className="cursor-pointer inline-flex items-center justify-center rounded-xl px-6 py-2.5 font-poppins font-semibold text-sm bg-zinc-100 dark:bg-white/10 text-[#08152F] dark:text-white transition-all duration-300 hover:bg-zinc-200 dark:hover:bg-white/20"
+            className="cursor-pointer inline-flex items-center justify-center rounded-xl px-6 py-2.5 font-poppins font-semibold text-sm bg-[#2383AD] text-white transition-all duration-300 hover:bg-sky-700 active:scale-95 shadow-md hover:shadow-xl"
           >
             View Detail Project
           </m.button>
 
-          {/* {project.links?.length ? (
-            <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
-                {project.links.map((l) => {
-                  const isExternal = /^https?:\/\//.test(l.href);
-                // Button Link
-                  return isExternal ? (
-                    <a
-                      key={`${project.id}-${l.label}`}
-                      href={l.href}
-                      target="_blank"
-                      rel="noreferrer"
-                    className="inline-flex items-center justify-center rounded-xl px-6 py-2.5 font-poppins font-semibold text-sm bg-[#2383AD] text-white transition-all duration-300 hover:bg-sky-700 dark:hover:bg-sky-950 hover:shadow-lg active:scale-95"
-                    >
-                      {l.label}
-                    </a>
-                  ) : (
-                    <Link
-                      key={`${project.id}-${l.label}`}
-                      href={l.href}
-                    className="inline-flex items-center justify-center rounded-xl px-6 py-2.5 font-poppins font-semibold text-sm bg-zinc-100 dark:bg-white/10 text-[#08152F] dark:text-white transition-all duration-300 hover:bg-zinc-200 dark:hover:bg-white/20"
-                    >
-                      {l.label}
-                    </Link>
-                  );
-                })}
-              </div>
-            ) : null} */}
+          
         </div>
       </m.article>
 
