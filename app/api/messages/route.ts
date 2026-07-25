@@ -31,7 +31,7 @@ export async function POST(request: Request) {
     const { email, name, message} = body;
 
     const data = await resend.emails.send({
-      from: "appsporto <onboarding@resend.dev>",
+      from: "appsporto <no-reply@appsporto.my.id>",
       to: "nabilapipp2@gmail.com",
       subject: `Pesan baru dari ${name}`,
       html: `
