@@ -219,28 +219,6 @@ export const projectData: ProjectData[] = [
       // },
     ],
   },
-  // Project Cuanlytics
-  {
-    id: "10",
-    project_type: "Website Development",
-    image: "/asset/image/project-image/not-found-image.png",
-    project_name: "Annotation Tools",
-    project_desc:
-      "A web application for showcasing products and providing reviews in a simple, secure and modern way.",
-    target_user: "Coming Soon",
-    problem_solution: "Coming Soon",
-    tech_stack: "Next.JS, TailwindCSS, MongoDB",
-    links: [
-      // {
-      //   label: "Demo",
-      //   href: "https://myfinanceku.vercel.app/",
-      // },
-      {
-        label: "Github",
-        href: "https://github.com/NaApipp/review_app",
-      },
-    ],
-  },
   // Project Web Registrasi KYC
   {
     id: "11",
@@ -295,6 +273,43 @@ export const projectData: ProjectData[] = [
       {
         label: "PlayStore",
         href: "https://play.google.com/store/apps/details?id=com.nunomics.app&pcampaignid=web_share",
+      },
+    ],
+  },
+  // Project CMS MyFinance
+  {
+    id: "15",
+    project_type: "Website Development",
+    image: "/asset/image/project-image/cms-myfinanceku.png",
+    project_name: "MyFinanceKu CMS",
+    project_desc:
+      "This web-based application serves as the administrative hub for the MyFinanceKu platform. The system is specifically designed to help administrators manage article and news content, monitor news data analytics, and centrally manage access rights for other admin accounts in a secure and efficient manner.",
+    target_user: "Content Manager and Platform Administrator.",
+    problem_solution:
+      "This platform resolves the issue of slow and fragmented content management by providing an intuitive, secure, and efficient centralized CMS to supply and manage content across the entire platform ecosystem.",
+    tech_stack: "ExpressJS, NextJS, MongoDB",
+    links: [
+      {
+        label: "Demo",
+        href: "https://cms-myfinance.vercel.app",
+      },
+    ],
+  },
+  // Project CMS Nunomics
+  {
+    id: "16",
+    project_type: "Website Development",
+    image: "/asset/image/project-image/cover-platfom-skill.png",
+    project_name: "Platform Skill Assessment",
+    project_desc:
+      "The Information Systems (IS) Skill Assessment Platform is an interactive web application specifically designed to measure and map the interest and aptitude profiles of IS students. The system evaluates whether a user's competency profile leans more towards the Business domain or the Technology domain. Based on the assessment results, the system plots the user's position within a visual quadrant and recommends career paths relevant to their profile.",
+    target_user: "Information Systems student with Admin.",
+    problem_solution: "The Skill Assessment platform serves as a digital solution to address the inefficiencies, subjectivity, and monitoring difficulties associated with manual competency evaluation processes. Through automated assessments, standardized indicators, and a centralized analytics dashboard, the system ensures that participant skill testing is objective, rapid, transparent, and easily accessible at any time.",
+    tech_stack: "NextJS, TailwindCSS, MongoDB",
+    links: [
+      {
+        label: "Github",
+        href: "https://github.com/NaApipp/platform_skillassesment",
       },
     ],
   },
