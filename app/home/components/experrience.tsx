@@ -13,7 +13,7 @@ type Experience = {
 
 const experience: Experience[] = [
   {
-    company: "Intern Quality Assurance (QA)",
+    company: "Quality Assurance (QA)",
     location: "PT Bullion Ecosystem International - Bogor, West Java",
     dateRange: "Jul 2025 - Present",
     bullets: [
