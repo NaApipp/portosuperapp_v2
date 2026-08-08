@@ -68,8 +68,8 @@ export default function GitHubStats({
         >
           <StatCard
             title="Repositories"
-            value={stats.public_repos}
-            subtitle="Public repositories"
+            value={stats.total_repos}
+            subtitle="Total Repositories"
             color="#8b5cf6"
           />
         </m.div>
