@@ -66,12 +66,13 @@ export default function Project() {
 
         {/* LIST (pakai card kamu yang sudah ada) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <div key={project.id} className="flex">
-              {/* render card kamu di sini */}
-              <ProjectCard project={project} />
-            </div>
-          ))}
+          {[...filteredProjects]  
+            .sort((a, b) => Number(b.id) - Number(a.id))
+            .map((project) => (
+              <div key={project.id} className="flex">
+                <ProjectCard project={project} />
+              </div>
+            ))}
         </div>
 
         {/* OPTIONAL: empty state */}
