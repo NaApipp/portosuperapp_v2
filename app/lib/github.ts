@@ -37,11 +37,13 @@ export async function getGitHubStats() {
     const data = await res.json();
 
     // total_repos: gabungan public + private (cuma keluar kalau pakai /user + token)
-    // followers tetap publik (memang selalu publik di GitHub)
+    // mengutamakan owned_private_repos (repo milik sendiri) sebelum total_private_repos
     return {
       public_repos: data.public_repos ?? 0,
       followers: data.followers ?? 0,
-      total_repos: token ? (data.total_private_repos ?? 0) + (data.public_repos ?? 0) : (data.public_repos ?? 0),
+      total_repos: token 
+        ? ((data.owned_private_repos ?? data.total_private_repos ?? 0) + (data.public_repos ?? 0)) 
+        : (data.public_repos ?? 0),
     };
   } catch (error) {
     console.error("Error fetching GitHub stats:", error);
@@ -75,37 +77,48 @@ export async function getGitHubRepos(): Promise<SafeRepoSummary[]> {
       headers["Authorization"] = `Bearer ${token}`;
     }
 
-    // Kalau ada token, pakai /user/repos supaya ikut kehitung private repo-nya.
-    // Tapi hasil private repo akan DIFILTER sebelum dikembalikan (lihat di bawah).
-    const endpoint = token
-      ? `${GITHUB_API}/user/repos?per_page=100&visibility=all&affiliation=owner`
-      : `${GITHUB_API}/users/${username}/repos?per_page=100`;
+    let repos: any[] = [];
+    let page = 1;
+    const perPage = 100;
+    let hasNextPage = true;
 
-    const res = await fetch(endpoint, {
-      headers,
-      next: { revalidate: 300 },
-    });
+    while (hasNextPage) {
+      const endpoint = token
+        ? `${GITHUB_API}/user/repos?per_page=${perPage}&page=${page}&visibility=all&affiliation=owner`
+        : `${GITHUB_API}/users/${username}/repos?per_page=${perPage}&page=${page}`;
 
-    if (!res.ok) {
-      console.error(`GitHub API Error (Repos): ${res.status} ${res.statusText}`);
-      return [];
+      const res = await fetch(endpoint, {
+        headers,
+        next: { revalidate: 300 },
+      });
+
+      if (!res.ok) {
+        console.error(`GitHub API Error (Repos) Page ${page}: ${res.status} ${res.statusText}`);
+        break;
+      }
+
+      const pageRepos = await res.json();
+      if (!Array.isArray(pageRepos) || pageRepos.length === 0) {
+        hasNextPage = false;
+      } else {
+        repos = repos.concat(pageRepos);
+        if (pageRepos.length < perPage) {
+          hasNextPage = false;
+        } else {
+          page++;
+        }
+      }
     }
 
-    const repos = await res.json();
-
-    // PENTING: jangan pernah kirim nama/url repo PRIVATE ke client.
-    // Cuma tampilkan repo publik secara detail. Kalau mau tau JUMLAH repo
-    // private, pakai angka dari getGitHubStats().total_repos, bukan dari sini.
-    return repos
-      .filter((repo: any) => repo.private === false)
-      .map((repo: any) => ({
-        name: repo.name,
-        html_url: repo.html_url,
-        description: repo.description,
-        language: repo.language,
-        stargazers_count: repo.stargazers_count,
-        private: repo.private,
-      }));
+    // Repo private disamarkan agar aman dikirim ke client tetapi datanya (bahasa & bintang) tetap masuk hitungan statistik.
+    return repos.map((repo: any) => ({
+      name: repo.private ? "Private Repository" : repo.name,
+      html_url: repo.private ? "" : repo.html_url,
+      description: repo.private ? null : repo.description,
+      language: repo.language,
+      stargazers_count: repo.stargazers_count,
+      private: repo.private,
+    }));
   } catch (error) {
     console.error("Error fetching GitHub repos:", error);
     return [];
