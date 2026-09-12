@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 import AOSInit from "./components/AOSInit";
 import ScrollAnimation from "./components/ScrollAnimation";
 import PageLoader from "./components/PageLoader";
-import AIChatButton from "./components/AIChatButton";
+// import AIChatButton from "./components/AIChatButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
