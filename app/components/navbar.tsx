@@ -80,7 +80,7 @@ export default function Header() {
           <div className="relative flex items-center justify-between py-3 md:py-4 px-6 md:px-8 bg-background/80 backdrop-blur-md border border-text-secondary/20 rounded-full shadow-lg transition-colors duration-300">
             <div className="flex flex-row items-center">
               {/* Typographic Logo */}
-              <img src="/asset/image/Logo/logo_apip_white.png" alt="Logo Image" width={50} height={50}/>
+              <img src="/asset/image/Logo/logo_apip_white.png" alt="Logo Image" className="w-8 md:w-10 h-auto "/>
               <span className="text-xl md:text-2xl font-black text-text-primary tracking-tighter">APIP.</span>
             </div>
 
