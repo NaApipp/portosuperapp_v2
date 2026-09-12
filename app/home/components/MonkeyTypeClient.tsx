@@ -123,8 +123,7 @@ export default function MonkeyTypeClient({ data, pbs, bestOverall }: MonkeyTypeC
           <div className="absolute inset-0 bg-zinc-100 dark:bg-white/[0.03] group-hover:bg-zinc-200 dark:group-hover:bg-white/[0.08] transition-colors" />
           <div className="absolute inset-0 border border-zinc-200 dark:border-white/10 group-hover:border-zinc-300 dark:group-hover:border-white/20 transition-colors" />
           <span className="relative flex items-center gap-2 text-[10px] font-black text-zinc-500 group-hover:text-zinc-900 dark:group-hover:text-white uppercase tracking-[0.2em]">
-            Profile Details
-            <span className="text-zinc-400 dark:text-zinc-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+            Public Profile Details
           </span>
         </a>
       </motion.div>
