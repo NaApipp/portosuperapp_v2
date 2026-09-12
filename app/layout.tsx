@@ -6,6 +6,8 @@ import Navbar from "./components/navbar";
 import "aos/dist/aos.css";
 import AOSInit from "./components/AOSInit";
 import ScrollAnimation from "./components/ScrollAnimation";
+import PageLoader from "./components/PageLoader";
+import AIChatButton from "./components/AIChatButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -99,19 +101,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex h-screen bg-gray-50/50 dark:bg-[#08152F]">
-          <Sidebar />
-          <div className="flex flex-col flex-1 overflow-hidden">
-            {/* Navbar hanya mobile & tablet */}
-            <Navbar />
-
-            <main className="flex-1 overflow-y-auto">
-              <ScrollAnimation />
-              <AOSInit />
-              {children}
-            </main>
-          </div>
-        </div>
+        <PageLoader />
+        {children}
+        {/* <AIChatButton /> */}
       </body>
     </html>
   );
