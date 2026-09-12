@@ -5,39 +5,15 @@ type StatCardProps = {
   color: string;
 };
 
-export default function StatCard({
-  title,
-  value,
-  subtitle,
-  color,
-}: StatCardProps) {
+export default function StatCard({ title, value, subtitle, color }: StatCardProps) {
   return (
-    <div
-      className="
-        p-4
-        rounded-xl
-        bg-white/40
-        dark:bg-white/5
-        backdrop-blur-md
-        border border-zinc-200
-        dark:border-white/10
-        shadow-sm
-        dark:shadow-lg
-      "
-    >
-      <h4 className="text-sm text-zinc-500 dark:text-white/60">{title}</h4>
-
-      <div className="text-2xl font-bold text-[#08152F] dark:text-white mt-1">
-        {value}
-      </div>
-
-      <p className="text-xs text-zinc-400 dark:text-white/40 mt-1">
-        {subtitle}
-      </p>
-
-      <div className="mt-3 h-[3px] w-full bg-zinc-200 dark:bg-white/10 rounded-full overflow-hidden">
+    <div className="group p-6 rounded-2xl border border-text-secondary/10 bg-thirdary/10 hover:bg-thirdary/30 hover:border-text-primary/30 transition-all duration-300 hover:-translate-y-1">
+      <p className="text-xs font-bold tracking-[0.2em] text-text-secondary uppercase mb-3">{title}</p>
+      <div className="text-4xl font-black text-text-primary tracking-tight mb-1">{value}</div>
+      <p className="text-sm font-medium text-text-secondary">{subtitle}</p>
+      <div className="mt-4 h-[2px] w-full bg-text-secondary/10 rounded-full overflow-hidden">
         <div
-          className="h-full rounded-full"
+          className="h-full rounded-full transition-all duration-700"
           style={{
             width: `${Math.min(100, value * 10)}%`,
             backgroundColor: color,
