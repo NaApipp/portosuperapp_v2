@@ -65,7 +65,7 @@ export default function HeroV3() {
                 Hi, I&apos;m
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-text-primary to-text-secondary">
                   {" "}
-                  Nabil Apip
+                  Nabil Arif
                 </span>
               </h1>
             </div>
