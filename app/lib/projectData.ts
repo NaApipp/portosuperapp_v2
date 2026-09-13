@@ -17,71 +17,6 @@ export type ProjectData = {
 };
 
 export const projectData: ProjectData[] = [
-  // Project GreenCode
-  {
-    id: "1",
-    project_type: "Website Development",
-    image: "/asset/image/project-image/Cover-GreenCode.png",
-    project_name: "GreenCode Web",
-    project_desc:
-      "A web application for managing B3 (hazardous and toxic) waste, designed with a responsive and attractive user interface. This platform helps users to efficiently track, record, and manage waste disposal processes, ensuring compliance with environmental regulations. The intuitive dashboard and real-time data features make waste management easier and more organized for both individuals and organizations.",
-    target_user: "GreenCode targets individuals and households unsure of how to safely dispose of hazardous waste (such as e-waste), as well as small businesses requiring practical waste management solutions to ensure regulatory compliance. The service operates in four areas: Semarang, Kendal, Batang, and Yogyakarta.",
-    problem_solution:
-      "Many people struggle to manage hazardous and toxic waste (B3) due to a lack of access and education, creating risks of environmental pollution and health hazards. GreenCode addresses this by providing educational guidance alongside a practical pickup solution: users simply sort their waste and fill out an online form, and the GreenCode team collects it for professional management.",
-    tech_stack: "HTML, CSS, JS (Native)",
-    links: [
-      {
-        label: "Github",
-        href: "https://github.com/NaApipp/Website-GreenCode.git",
-      },
-      { label: "Demo", href: "https://greencodev2.vercel.app/" },
-    ],
-  },
-
-  // Project Rent Car Design
-  {
-    id: "2",
-    project_type: "UI/UX Design",
-    image: "/asset/image/project-image/rent-car-design.png",
-    project_name: "UI Design Rent Car",
-    project_desc:
-      "I designed an application for Car Rental. This design helps to rent vehicles more efficiently and practically. The design is responsive, intuitive, and attractive, making it easy to use on various devices.",
-    target_user: "Individuals or businesses looking for an easy, transparent, and reliable way to rent vehicles for personal or professional use.",
-    problem_solution:
-      "Many vehicle rental apps suffer from cluttered interfaces and confusing booking processes. This UI design solves this issue by offering a clean, user-centric interface that allows users to quickly browse cars, compare prices effortlessly, and complete their bookings with minimal friction.",
-    tech_stack: "-",
-    links: [
-      {
-        label: "Figma",
-        href: "https://www.figma.com/design/pr4Aq1YidB8YRMuJji62wU/Design-Aplikasi-Sewa-Mobil?node-id=0-1&t=hEefgeNzbCZ6wGrg-1",
-      },
-    ],
-  },
-
-  // Project Coffee Shop Web Template
-  {
-    id: "3",
-    project_type: "Website Development",
-    image: "/asset/image/project-image/coffee_shop.png",
-    project_name: "CoffeeShop Web Template",
-    project_desc:
-      "I provide a web application template for Coffee Shops. This website features menu viewing and ordering capabilities. The design is responsive and attractive, making it comfortable to use on various devices.",
-    target_user: "Coffee shop owners looking to establish an online presence, or customers wanting to view menus and place orders easily.",
-    problem_solution:
-      "Many small coffee shops lack the resources to build a custom website from scratch, missing out on potential online customers. This web template provides a ready-to-use, responsive solution that allows cafes to beautifully showcase their menu and handle orders, ultimately increasing their reach and sales.",
-    tech_stack: "PHP Native",
-    links: [
-      {
-        label: "Github",
-        href: "https://github.com/NaApipp/apps-coffee",
-      },
-      {
-        label: "Demo",
-        href: "https://appscoffee.vercel.app/",
-      },
-    ],
-  },
-
   // Project Scholl Profile
   {
     id: "4",
@@ -102,7 +37,7 @@ export const projectData: ProjectData[] = [
     ],
   },
 
-  // Project Scholl Profile
+  // Project Master Java
   {
     id: "5",
     project_type: "Website Development",
@@ -122,7 +57,7 @@ export const projectData: ProjectData[] = [
     ],
   },
 
-  // Project GreenCode V6
+  // Project GreenCode V3
   {
     id: "6",
     project_type: "Website Development",
@@ -173,6 +108,7 @@ export const projectData: ProjectData[] = [
       },
     ],
   },
+
   // Project Parking Logic
   {
     id: "8",
@@ -196,6 +132,7 @@ export const projectData: ProjectData[] = [
       },
     ],
   },
+
   // Project MyFinanceKu
   {
     id: "9",
@@ -219,6 +156,7 @@ export const projectData: ProjectData[] = [
       // },
     ],
   },
+  
   // Project Web Registrasi KYC
   {
     id: "11",
@@ -238,6 +176,7 @@ export const projectData: ProjectData[] = [
       },
     ],
   },
+
   // Project Web Registrasi Dashboard
   {
     id: "12",
@@ -257,6 +196,7 @@ export const projectData: ProjectData[] = [
       },
     ],
   },
+
   // Project GTM Gold To Mecca
   {
     id: "13",
@@ -276,6 +216,7 @@ export const projectData: ProjectData[] = [
       },
     ],
   },
+
   // Project CMS MyFinance
   {
     id: "15",
@@ -295,7 +236,8 @@ export const projectData: ProjectData[] = [
       },
     ],
   },
-  // Project CMS Nunomics
+
+  // Project Platform Skill Assessment
   {
     id: "16",
     project_type: "Website Development",
@@ -313,6 +255,7 @@ export const projectData: ProjectData[] = [
       },
     ],
   },
+  
 ];
 
 export const filterProjectsByType = (type: ProjectType | "all") => {
