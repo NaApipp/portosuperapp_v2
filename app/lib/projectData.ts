@@ -236,7 +236,6 @@ export const projectData: ProjectData[] = [
       },
     ],
   },
-
   // Project Platform Skill Assessment
   {
     id: "16",
@@ -255,7 +254,24 @@ export const projectData: ProjectData[] = [
       },
     ],
   },
-  
+  // Project Dashboard Admin Admaja
+  {
+    id: "17",
+    project_type: "Website Development",
+    image: "/asset/image/project-image/cover-lp-admaja2.png",
+    project_name: "Profile Organization Admaja",
+    project_desc:
+      "The official landing page and profile website for Paskibra ADMAJA (Adika Mahdi Jaya) at SMKN 4 Kendal. This website serves as the digital front door of the extracurricular organization, providing comprehensive information about its history, principles (Panca Bakti), organizational structure, activity galleries, and registration details.",
+    target_user: "Prospective members (students of SMKN 4 Kendal), current members, alumni, and parents seeking information about the organization.",
+    problem_solution: "Previously, information regarding the organization, its activities, and recruitment processes was scattered and often relied on word-of-mouth or limited social media posts. This landing page provides a centralized, professional online presence, making it easier for students and the public to access credible information, understand the organization's values, and find answers to common questions.",
+    tech_stack: "NextJS, TailwindCSS, MongoDB",
+    links: [
+      {
+        label: "Demo",
+        href: "https://admajaskanifo.org",
+      },
+    ],
+  },
 ];
 
 export const filterProjectsByType = (type: ProjectType | "all") => {
