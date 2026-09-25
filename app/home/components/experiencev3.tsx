@@ -25,7 +25,7 @@ const experiences: ExperienceItem[] = [
   {
     id: 2,
     company: "PT Bullion Ecosystem International",
-    role: "Quality Assurance (QA)",
+    role: "QA Engineer",
     date: "Jul 2025 - present",
     description:
       "Responsible for conducting functional and UI testing for new and existing features, creating detailed test cases and structured bug reports, and working closely with developers to ensure high product quality.",
