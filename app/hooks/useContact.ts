@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
 
 export function useContact() {
-    // EMAIL
+  // EMAIL
   const [email, setEmail] = useState("");
-//   NAME
+  //   NAME
   const [name, setName] = useState("");
-//   Message
+  //   Message
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<string | null>(null);
   const [statusType, setStatusType] = useState<"success" | "error" | "">("");
@@ -63,10 +63,14 @@ export function useContact() {
       // ✅ optional tapi bagus: idempotency key (buat server dedupe)
       const clientMessageId = crypto.randomUUID();
 
-      const res = await fetch("/api/messages", {
+      const res = await fetch("https://api.appsporto.my.id/api/message", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: trimmedEmail, name: trimmedName, message: trimmedMessage, clientMessageId }),
+        body: JSON.stringify({
+          email: trimmedEmail,
+          name: trimmedName,
+          message: trimmedMessage,
+        }),
       });
 
       const data = await res.json();
